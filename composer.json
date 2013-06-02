@@ -1,0 +1,27 @@
+{
+    "require": {
+        "dflydev/doctrine-orm-service-provider": "v1.0.0",
+        "igorw/config-service-provider": "v1.2.0",
+        "knplabs/knp-menu": "1.1.*",
+        "monolog/monolog": "1.5.*",
+        "silex/silex": "~1.0",
+        "swiftmailer/swiftmailer": ">=4.1.2,<4.2-dev",
+        "symfony/doctrine-bridge": "2.2.*",
+        "symfony/config": "2.2.*",
+        "symfony/form": "2.2.*",
+        "symfony/security": "2.2.*",
+        "symfony/translation": "2.2.*",
+        "symfony/twig-bridge": "2.2.*",
+        "symfony/validator": "2.2.*",
+        "symfony/yaml": "2.2.*",
+        "twig/extensions": "1.0.*"
+    },
+    "autoload":
+    {
+        "psr-0":
+        {
+            "": "src/",
+            "Application": "app/"
+        }
+    }
+}
