@@ -1,0 +1,7 @@
+db.options:
+  driver: pdo_mysql
+  dbname: silexskeleton
+  host: localhost
+  user: root
+  password: root
+  port: 3306

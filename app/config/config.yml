@@ -1,0 +1,60 @@
+env: %env%
+root_dir: %root_dir%
+locale: en
+locale_fallback: en
+
+twig.path: []
+twig.templates: []
+twig.options:
+  cache: %root_dir%/app/cache/twig
+twig.form.templates: form_div_layout.html.twig
+
+session.storage.save_path: ~
+session.storage.options:
+  name: ~
+  id: ~
+  cookie_lifetime: ~
+  cookie_path: ~
+  cookie_domain: ~
+  cookie_secure: ~
+  cookie_httponly: ~
+session.test: false
+
+form.secret: ThisTokenIsNotSoSecretChangeIt
+
+http_cache.cache_dir: %root_dir%/cache/httpcache
+http_cache.options: ~
+
+security.firewalls:
+  unsecured:
+    anonymous: true
+security.access_rules: []
+security.role_hierarchy: []
+
+swiftmailer.options:
+  host: ~
+  port: ~
+  username: ~
+  password: ~
+  encryption: ~
+  auth_mode: ~
+
+monolog.logfile: ~
+monolog.level: ~
+monolog.name: ~
+
+translator.domains: []
+
+db.options:
+  driver: ~
+  dbname: ~
+  host: ~
+  user: ~
+  password: ~
+  charset: UTF8
+  path: ~
+  port: ~
+
+orm.proxies_dir: %root_dir%/app/cache/doctrine/proxies
+orm.em.options:
+  mappings: []

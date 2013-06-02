@@ -1,0 +1,4 @@
+debug: false
+
+monolog.logfile: %root_dir%/app/log/prod.lo
+monolog.level: ERROR

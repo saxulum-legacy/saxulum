@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+
+use Doctrine\ORM\Tools\Console\ConsoleRunner;
+use Doctrine\DBAL\Tools\Console\Helper\ConnectionHelper;
+use Doctrine\ORM\Tools\Console\Helper\EntityManagerHelper;
+use Symfony\Component\Console\Application as ConsoleApplication;
+use Symfony\Component\Console\Helper\HelperSet;
+
+$app = require("app.php");
+$console = new ConsoleApplication();
+$helperSet = new HelperSet(array(
+    'db' => new ConnectionHelper($app['orm.em']->getConnection()),
+    'em' => new EntityManagerHelper($app['orm.em'])
+));
+$console->setHelperSet($helperSet);
+ConsoleRunner::addCommands($console);
+$console->run();
