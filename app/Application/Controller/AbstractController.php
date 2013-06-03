@@ -2,12 +2,10 @@
 
 namespace Application\Controller;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\ORM\EntityManager;
+use Doctrine\Common\Persistence\ManagerRegistry;
 use Psr\Log\LoggerInterface;
 use Silex\Application;
 use Silex\ControllerCollection;
-use Silex\ControllerProviderInterface;
 use Silex\HttpCache;
 use Symfony\Component\Form\FormFactory;
 use Symfony\Component\Routing\Generator\UrlGenerator;
@@ -130,18 +128,10 @@ abstract class AbstractController implements MountableControllerProviderInterfac
     }
 
     /**
-     * @return Connection
+     * @return ManagerRegistry
      */
-    protected function getConnection()
+    protected function getDoctrine()
     {
-        return $this->app['db'];
-    }
-
-    /**
-     * @return EntityManager
-     */
-    protected function getEntityManager()
-    {
-        return $this->app['orm.em'];
+        return $this->app['doctrine'];
     }
 }

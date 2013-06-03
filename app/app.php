@@ -1,5 +1,6 @@
 <?php
 
+use Application\Provider\ManagerRegistryProvider;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Dflydev\Silex\Provider\DoctrineOrm\DoctrineOrmServiceProvider;
 use Igorw\Silex\ConfigServiceProvider;
@@ -16,6 +17,7 @@ use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
 use Silex\Provider\ValidatorServiceProvider;
 use Silex\Application;
+use Symfony\Bridge\Doctrine\Form\DoctrineOrmExtension;
 
 // load composer
 if (!$loader = @include dirname(__DIR__) . '/vendor/autoload.php')
@@ -62,6 +64,13 @@ $app->register(new ServiceControllerServiceProvider());
 
 // register usefull external providers
 $app->register(new DoctrineOrmServiceProvider());
+$app->register(new ManagerRegistryProvider());
+
+// add form extension
+$app['form.extensions'] = $app->share($app->extend('form.extensions', function ($extensions, $app) {
+    $extensions[] = new DoctrineOrmExtension($app['doctrine']);
+    return $extensions;
+}));
 
 // load all project providers
 require 'register.php';

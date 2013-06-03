@@ -40,7 +40,7 @@ class ExampleController extends AbstractController
      */
     public function listAction()
     {
-        $examples = $this->getEntityManager()->getRepository(get_class(new Example()))->findAll();
+        $examples = $this->getDoctrine()->getManager()->getRepository(get_class(new Example()))->findAll();
 
         return $this->renderView('@VendorSkeleton/Example/list.html.twig', array(
             'examples' => $examples,
@@ -58,7 +58,7 @@ class ExampleController extends AbstractController
         if(is_null($id)) {
             $example = new Example();
         } else {
-            $example = $this->getEntityManager()->getRepository(get_class(new Example()))->find($id);
+            $example = $this->getDoctrine()->getManager()->getRepository(get_class(new Example()))->find($id);
             if(is_null($example)) {
                 throw new NotFoundHttpException("Can't find example with id {$id}");
             }
@@ -69,8 +69,8 @@ class ExampleController extends AbstractController
         if('POST' === $request->getMethod()) {
             $exampleForm->bind($request);
             if($exampleForm->isValid()) {
-                $this->getEntityManager()->persist($example);
-                $this->getEntityManager()->flush();
+                $this->getDoctrine()->getManager()->persist($example);
+                $this->getDoctrine()->getManager()->flush();
                 return new RedirectResponse($this->getUrlGenerator()->generate('example_edit', array('id' => $example->getId())));
             }
         }
