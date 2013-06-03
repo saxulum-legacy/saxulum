@@ -37,7 +37,9 @@ abstract class AbstractSilexBundleProvider implements ServiceProviderInterface
             $controllerClassName = basename($controllerFilePath, '.php');
             $controllerNamespace = $this->getNamespace() . '\\Controller\\' . $controllerClassName;
             $reflectionClass = new \ReflectionClass($controllerNamespace);
-            if(!$reflectionClass->isAbstract() || $reflectionClass->isInterface()) {
+            if($reflectionClass->implementsInterface('Application\Controller\MountableControllerProviderInterface') &&
+               !$reflectionClass->isAbstract() &&
+               !$reflectionClass->isInterface()) {
                 $controller = new $controllerNamespace();
                 /** @var AbstractController $controller */
                 $this->app->mount($controller->getMount(), $controller);

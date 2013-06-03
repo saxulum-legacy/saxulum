@@ -17,23 +17,23 @@ use Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy;
 use Symfony\Component\Translation\Translator;
 use Symfony\Component\Validator\Validator;
 
-abstract class AbstractController implements ControllerProviderInterface
+abstract class AbstractController implements MountableControllerProviderInterface
 {
     /**
      * @var Application
      */
     protected $app;
 
+    /**
+     * @return string
+     */
+    abstract public function getMount();
+
     public function connect(Application $app)
     {
         $this->app = $app;
         return $this->addRoutes($this->getControllerFactory());
     }
-
-    /**
-     * @return string
-     */
-    abstract public function getMount();
 
     /**
      * @param ControllerCollection $controllerCollection
