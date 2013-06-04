@@ -18,9 +18,9 @@ use Symfony\Component\Validator\Validator;
 abstract class AbstractController implements MountableControllerProviderInterface
 {
     /**
-     * @var Application
+     * @var \Pimple
      */
-    protected $app;
+    protected $container;
 
     /**
      * @return string
@@ -29,7 +29,7 @@ abstract class AbstractController implements MountableControllerProviderInterfac
 
     public function connect(Application $app)
     {
-        $this->app = $app;
+        $this->container = $app;
         return $this->addRoutes($this->getControllerFactory());
     }
 
@@ -44,7 +44,7 @@ abstract class AbstractController implements MountableControllerProviderInterfac
      */
     protected function getControllerFactory()
     {
-        return $this->app['controllers_factory'];
+        return $this->container['controllers_factory'];
     }
 
     /**
@@ -52,7 +52,7 @@ abstract class AbstractController implements MountableControllerProviderInterfac
      */
     protected function getTwig()
     {
-        return $this->app['twig'];
+        return $this->container['twig'];
     }
 
     /**
@@ -60,7 +60,7 @@ abstract class AbstractController implements MountableControllerProviderInterfac
      */
     protected function getUrlGenerator()
     {
-        return $this->app['url_generator'];
+        return $this->container['url_generator'];
     }
 
     /**
@@ -68,7 +68,7 @@ abstract class AbstractController implements MountableControllerProviderInterfac
      */
     protected function getSession()
     {
-        return $this->app['session'];
+        return $this->container['session'];
     }
 
     /**
@@ -76,7 +76,7 @@ abstract class AbstractController implements MountableControllerProviderInterfac
      */
     protected function getValidator()
     {
-        return $this->app['validator'];
+        return $this->container['validator'];
     }
 
     /**
@@ -84,7 +84,7 @@ abstract class AbstractController implements MountableControllerProviderInterfac
      */
     protected function getFormFactory()
     {
-        return $this->app['form.factory'];
+        return $this->container['form.factory'];
     }
 
     /**
@@ -92,7 +92,7 @@ abstract class AbstractController implements MountableControllerProviderInterfac
      */
     protected function getHttpCache()
     {
-        return $this->app['http_cache'];
+        return $this->container['http_cache'];
     }
 
     /**
@@ -100,7 +100,7 @@ abstract class AbstractController implements MountableControllerProviderInterfac
      */
     protected function setSecurity()
     {
-        return $this->app['security'];
+        return $this->container['security'];
     }
 
     /**
@@ -108,7 +108,7 @@ abstract class AbstractController implements MountableControllerProviderInterfac
      */
     protected function getMailer()
     {
-        return $this->app['mailer'];
+        return $this->container['mailer'];
     }
 
     /**
@@ -116,7 +116,7 @@ abstract class AbstractController implements MountableControllerProviderInterfac
      */
     protected function getLogger()
     {
-        return $this->app['monolog'];
+        return $this->container['monolog'];
     }
 
     /**
@@ -124,7 +124,7 @@ abstract class AbstractController implements MountableControllerProviderInterfac
      */
     protected function getTranslator()
     {
-        return $this->app['translator'];
+        return $this->container['translator'];
     }
 
     /**
@@ -132,6 +132,6 @@ abstract class AbstractController implements MountableControllerProviderInterfac
      */
     protected function getDoctrine()
     {
-        return $this->app['doctrine'];
+        return $this->container['doctrine'];
     }
 }
