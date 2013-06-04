@@ -45,8 +45,6 @@ $app = new Application();
 
 // load configs
 $app->register(new ConfigServiceProvider("{$arrConfig['root_dir']}/app/config/config.yml", $arrConfig));
-$app->register(new ConfigServiceProvider("{$arrConfig['root_dir']}/app/config/config_{$arrConfig['env']}.yml", $arrConfig));
-$app->register(new ConfigServiceProvider("{$arrConfig['root_dir']}/app/config/parameters.yml"));
 
 // register all provided silex providers
 $app->register(new TwigServiceProvider());
@@ -74,6 +72,10 @@ $app['form.extensions'] = $app->share($app->extend('form.extensions', function (
 
 // load all project providers
 require 'register.php';
+
+// load the environment based configs
+$app->register(new ConfigServiceProvider("{$arrConfig['root_dir']}/app/config/config_{$arrConfig['env']}.yml", $arrConfig));
+$app->register(new ConfigServiceProvider("{$arrConfig['root_dir']}/app/config/parameters.yml"));
 
 // return the app
 return $app;
