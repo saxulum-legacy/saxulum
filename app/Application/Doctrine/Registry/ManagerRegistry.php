@@ -10,9 +10,9 @@ use Doctrine\ORM\ORMException;
 class ManagerRegistry implements ManagerRegistryInterface
 {
     /**
-     * @var string
+     * @var \Pimple
      */
-    protected $proxyInterfaceName;
+    protected $container;
 
     /**
      * @var Connection[]
@@ -35,15 +35,17 @@ class ManagerRegistry implements ManagerRegistryInterface
     protected $defaultManagerName;
 
     /**
+     * @var string
+     */
+    protected $proxyInterfaceName;
+
+    /**
      * @param \Pimple $container
      * @param string $proxyInterfaceName
      */
     public function __construct(\Pimple $container, $proxyInterfaceName = 'Doctrine\ORM\Proxy\Proxy')
     {
-        $this->connections = $container['dbs'];
-        $this->defaultConnectionName = $container['dbs.default'];
-        $this->managers = $container['orm.ems'];
-        $this->defaultManagerName = $container['orm.ems.default'];
+        $this->container = $container;
         $this->proxyInterfaceName = $proxyInterfaceName;
     }
 
@@ -52,6 +54,7 @@ class ManagerRegistry implements ManagerRegistryInterface
      */
     public function getDefaultConnectionName()
     {
+        $this->loadConnections();
         return $this->defaultConnectionName;
     }
 
@@ -62,6 +65,8 @@ class ManagerRegistry implements ManagerRegistryInterface
      */
     public function getConnection($name = null)
     {
+        $this->loadConnections();
+
         if($name === null) {
             $name = $this->getDefaultConnectionName();
         }
@@ -78,6 +83,7 @@ class ManagerRegistry implements ManagerRegistryInterface
      */
     public function getConnections()
     {
+        $this->loadConnections();
         return $this->connections;
     }
 
@@ -93,11 +99,20 @@ class ManagerRegistry implements ManagerRegistryInterface
         return $names;
     }
 
+    protected function loadConnections()
+    {
+        if(is_null($this->connections)) {
+            $this->connections = $this->container['dbs'];
+            $this->defaultConnectionName = $this->container['dbs.default'];
+        }
+    }
+
     /**
      * @return string
      */
     public function getDefaultManagerName()
     {
+        $this->loadManagers();
         return $this->defaultManagerName;
     }
 
@@ -108,6 +123,8 @@ class ManagerRegistry implements ManagerRegistryInterface
      */
     public function getManager($name = null)
     {
+        $this->loadManagers();
+
         if($name === null) {
             $name = $this->getDefaultManagerName();
         }
@@ -124,7 +141,20 @@ class ManagerRegistry implements ManagerRegistryInterface
      */
     public function getManagers()
     {
+        $this->loadManagers();
         return $this->managers;
+    }
+
+    /**
+     * @return array
+     */
+    public function getManagerNames()
+    {
+        $names = array();
+        foreach($this->getManagers() as $name => $manager) {
+            $names[] = $name;
+        }
+        return $names;
     }
 
     /**
@@ -134,6 +164,8 @@ class ManagerRegistry implements ManagerRegistryInterface
      */
     public function resetManager($name = null)
     {
+        $this->loadManagers();
+
         if (null === $name) {
             $name = $this->getDefaultManagerName();
         }
@@ -143,6 +175,14 @@ class ManagerRegistry implements ManagerRegistryInterface
         }
 
         $this->managers[$name] = null;
+    }
+
+    protected function loadManagers()
+    {
+        if(is_null($this->managers)) {
+            $this->managers = $this->container['orm.ems'];
+            $this->defaultManagerName = $this->container['orm.ems.default'];
+        }
     }
 
     /**
@@ -160,18 +200,6 @@ class ManagerRegistry implements ManagerRegistryInterface
         }
 
         throw ORMException::unknownEntityNamespace($alias);
-    }
-
-    /**
-     * @return array
-     */
-    public function getManagerNames()
-    {
-        $names = array();
-        foreach($this->getManagers() as $name => $manager) {
-            $names[] = $name;
-        }
-        return $names;
     }
 
     /**
