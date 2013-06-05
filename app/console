@@ -10,9 +10,13 @@ use Symfony\Component\Console\Helper\HelperSet;
 $app = require("app.php");
 $console = new ConsoleApplication();
 $helperSet = new HelperSet(array(
-    'db' => new ConnectionHelper($app['orm.em']->getConnection()),
-    'em' => new EntityManagerHelper($app['orm.em'])
+    'db' => new ConnectionHelper($app['doctrine']->getConnection()),
+    'em' => new EntityManagerHelper($app['doctrine']->getManager())
 ));
 $console->setHelperSet($helperSet);
 ConsoleRunner::addCommands($console);
+
+// load all project providers
+require 'registercommand.php';
+
 $console->run();

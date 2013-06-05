@@ -71,7 +71,7 @@ $app['form.extensions'] = $app->share($app->extend('form.extensions', function (
 }));
 
 // load all project providers
-require 'register.php';
+require 'registerprovider.php';
 
 // load the environment based configs
 $app->register(new ConfigServiceProvider("{$arrConfig['root_dir']}/app/config/config_{$arrConfig['env']}.yml", $arrConfig));
