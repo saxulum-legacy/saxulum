@@ -1,4 +1,16 @@
 {
+    "name": "dominikzogg/silexskeleton",
+    "license": "MIT",
+    "type": "project",
+    "description": "A symfony like silex skeleton",
+    "autoload":
+    {
+        "psr-0":
+        {
+            "": "src/",
+            "Application": "app/"
+        }
+    },
     "require": {
         "dflydev/doctrine-orm-service-provider": "v1.0.0",
         "igorw/config-service-provider": "v1.2.0",
@@ -15,13 +27,5 @@
         "symfony/validator": "2.2.*",
         "symfony/yaml": "2.2.*",
         "twig/extensions": "1.0.*"
-    },
-    "autoload":
-    {
-        "psr-0":
-        {
-            "": "src/",
-            "Application": "app/"
-        }
     }
 }
