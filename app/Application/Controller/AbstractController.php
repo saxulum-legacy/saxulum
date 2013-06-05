@@ -7,6 +7,8 @@ use Psr\Log\LoggerInterface;
 use Silex\Application;
 use Silex\ControllerCollection;
 use Silex\HttpCache;
+use Symfony\Component\Form\Form;
+use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormFactory;
 use Symfony\Component\Routing\Generator\UrlGenerator;
 use Symfony\Component\HttpFoundation\Session\Session;
@@ -133,5 +135,27 @@ abstract class AbstractController implements MountableControllerProviderInterfac
     protected function getDoctrine()
     {
         return $this->container['doctrine'];
+    }
+
+    /**
+     * @param string $type
+     * @param null $data
+     * @param array $options
+     * @param FormBuilderInterface $parent
+     * @return Form
+     */
+    protected function createForm($type = 'form', $data = null, array $options = array(), FormBuilderInterface $parent = null)
+    {
+        return $this->getFormFactory()->createBuilder($type, $data, $options, $parent)->getForm();
+    }
+
+    /**
+     * @param $view
+     * @param array $parameters
+     * @return string
+     */
+    protected function renderView($view, array $parameters = array())
+    {
+        return $this->getTwig()->render($view, $parameters);
     }
 }
