@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "dbe01f00ce9af6ac7529f5e82b49fda6",
+    "hash": "70fadb13650a6c73a46ef5dd96728a1f",
     "packages": [
         {
             "name": "dflydev/doctrine-orm-service-provider",
@@ -271,6 +271,59 @@
                 "orm"
             ],
             "time": "2013-05-11 07:51:12"
+        },
+        {
+            "name": "dominikzogg/doctrine-orm-registry-manager-provider",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dominikzogg/doctrine-orm-registry-manager-provider.git",
+                "reference": "1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dominikzogg/doctrine-orm-registry-manager-provider/zipball/1.0",
+                "reference": "1.0",
+                "shasum": ""
+            },
+            "require": {
+                "dflydev/doctrine-orm-service-provider": "1.*@dev",
+                "php": ">=5.3.3",
+                "pimple/pimple": "1.*@dev"
+            },
+            "require-dev": {
+                "cilex/cilex": "1.*@dev",
+                "cilex/console-service-provider": "@dev",
+                "silex/silex": "1.*@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Dominikzogg\\Cilex": "src",
+                    "Dominikzogg\\Pimple": "src",
+                    "Dominikzogg\\Silex": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dominik Zogg",
+                    "email": "dominik.zogg@gmail.com"
+                }
+            ],
+            "description": "Doctrine ORM Registry Manager Provider",
+            "keywords": [
+                "cilex",
+                "doctrine",
+                "orm",
+                "pimple",
+                "registrymanager",
+                "silex"
+            ],
+            "time": "2013-06-05 18:41:54"
         },
         {
             "name": "igorw/config-service-provider",

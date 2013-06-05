@@ -13,6 +13,7 @@
     },
     "require": {
         "dflydev/doctrine-orm-service-provider": "v1.0.0",
+        "dominikzogg/doctrine-orm-registry-manager-provider": "1.0.*",
         "igorw/config-service-provider": "v1.2.0",
         "knplabs/knp-menu": "1.1.*",
         "monolog/monolog": "1.5.*",

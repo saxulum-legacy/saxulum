@@ -1,6 +1,6 @@
 <?php
 
-use Application\Provider\ManagerRegistryProvider;
+use Dominikzogg\Silex\Provider\DoctrineOrmManagerRegistryProvider;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Dflydev\Silex\Provider\DoctrineOrm\DoctrineOrmServiceProvider;
 use Igorw\Silex\ConfigServiceProvider;
@@ -62,7 +62,7 @@ $app->register(new ServiceControllerServiceProvider());
 
 // register usefull external providers
 $app->register(new DoctrineOrmServiceProvider());
-$app->register(new ManagerRegistryProvider());
+$app->register(new DoctrineOrmManagerRegistryProvider());
 
 // add form extension
 $app['form.extensions'] = $app->share($app->extend('form.extensions', function ($extensions, $app) {
