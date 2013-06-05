@@ -98,7 +98,7 @@ abstract class AbstractController implements MountableControllerProviderInterfac
     /**
      * @return SecurityContext
      */
-    protected function setSecurity()
+    protected function getSecurity()
     {
         return $this->container['security'];
     }
