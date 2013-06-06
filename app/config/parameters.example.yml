@@ -1,7 +1,22 @@
+locale: en
+locale_fallback: en
+
+form.secret: ThisTokenIsNotSoSecretChangeIt
+
+swiftmailer.options:
+  host: localhost
+  port: 25
+  username: ~
+  password: ~
+  encryption: ~
+  auth_mode: ~
+
 db.options:
   driver: pdo_mysql
   dbname: silexskeleton
   host: localhost
   user: root
   password: root
-  port: 3306
+  charset: UTF8
+  path: ~
+  port: ~

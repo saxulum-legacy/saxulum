@@ -49,14 +49,14 @@ abstract class AbstractSilexBundleProvider implements ServiceProviderInterface
 
     protected function addDoctrineOrmMappings()
     {
-        $ormEmOptions = $this->app['orm.em.options'];
-        $ormEmOptions['mappings'][] = array(
+        $emsOptions = isset($this->app['orm.em.options']) ? $this->app['orm.em.options'] : array();
+        $emsOptions['mappings'][] = array(
             'type' => 'annotation',
             'namespace' => $this->getNamespace() . '\Entity',
             'path' => $this->getPath() .'/Entity',
             'use_simple_annotation_reader' => false,
         );
-        $this->app['orm.em.options'] = $ormEmOptions;
+        $this->app['orm.em.options']= $emsOptions;
     }
 
     protected function addTranslatorRessources()

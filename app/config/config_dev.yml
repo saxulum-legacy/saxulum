@@ -1,4 +1,1 @@
-debug: true
-
-monolog.logfile: %root_dir%/app/log/dev.log
 monolog.level: 100

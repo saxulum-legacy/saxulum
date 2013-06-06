@@ -1,4 +1,1 @@
-debug: false
-
-monolog.logfile: %root_dir%/app/log/prod.log
 monolog.level: 400
