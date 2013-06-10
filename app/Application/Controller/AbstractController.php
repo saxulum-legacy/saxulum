@@ -13,7 +13,6 @@ use Symfony\Component\Form\FormFactory;
 use Symfony\Component\Routing\Generator\UrlGenerator;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Security\Core\SecurityContext;
-use Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy;
 use Symfony\Component\Translation\Translator;
 use Symfony\Component\Validator\Validator;
 
@@ -32,11 +31,12 @@ abstract class AbstractController implements MountableControllerProviderInterfac
     public function connect(Application $app)
     {
         $this->container = $app;
+
         return $this->addRoutes($this->getControllerFactory());
     }
 
     /**
-     * @param ControllerCollection $controllerCollection
+     * @param  ControllerCollection $controllerCollection
      * @return ControllerCollection
      */
     abstract protected function addRoutes(ControllerCollection $controllerCollection);
@@ -138,10 +138,10 @@ abstract class AbstractController implements MountableControllerProviderInterfac
     }
 
     /**
-     * @param string $type
-     * @param null $data
-     * @param array $options
-     * @param FormBuilderInterface $parent
+     * @param  string               $type
+     * @param  null                 $data
+     * @param  array                $options
+     * @param  FormBuilderInterface $parent
      * @return Form
      */
     protected function createForm($type = 'form', $data = null, array $options = array(), FormBuilderInterface $parent = null)
@@ -151,7 +151,7 @@ abstract class AbstractController implements MountableControllerProviderInterfac
 
     /**
      * @param $view
-     * @param array $parameters
+     * @param  array  $parameters
      * @return string
      */
     protected function renderView($view, array $parameters = array())
