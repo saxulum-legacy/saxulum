@@ -23,8 +23,7 @@ use Symfony\Bridge\Doctrine\Form\DoctrineOrmExtension;
 $rootDir = dirname(__DIR__);
 
 // load composer
-if (!$loader = @include $rootDir . '/vendor/autoload.php')
-{
+if (!$loader = @include $rootDir . '/vendor/autoload.php') {
     die("curl -s http://getcomposer.org/installer | php; php composer.phar install");
 }
 
@@ -62,6 +61,7 @@ $app->register(new DoctrineOrmManagerRegistryProvider());
 // add form extension
 $app['form.extensions'] = $app->share($app->extend('form.extensions', function ($extensions, $app) {
     $extensions[] = new DoctrineOrmExtension($app['doctrine']);
+
     return $extensions;
 }));
 

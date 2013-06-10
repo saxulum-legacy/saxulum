@@ -33,12 +33,13 @@ class Example
     }
 
     /**
-     * @param string $name
+     * @param  string   $name
      * @return Skeleton
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 

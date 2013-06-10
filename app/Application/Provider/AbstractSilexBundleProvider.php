@@ -33,7 +33,7 @@ abstract class AbstractSilexBundleProvider implements ServiceProviderInterface
 
     protected function addController()
     {
-        foreach(glob($this->getPath() . '/Controller/*Controller.php') as $controllerFilePath) {
+        foreach (glob($this->getPath() . '/Controller/*Controller.php') as $controllerFilePath) {
             $controllerClassName = basename($controllerFilePath, '.php');
             $controllerNamespace = $this->getNamespace() . '\\Controller\\' . $controllerClassName;
             $reflectionClass = new \ReflectionClass($controllerNamespace);
@@ -65,12 +65,13 @@ abstract class AbstractSilexBundleProvider implements ServiceProviderInterface
         $this->app['translator'] = $this->app->share($this->app->extend('translator',
             function(Translator $translator) use ($path) {
                 $translator->addLoader('yaml', new YamlFileLoader());
-                foreach(glob($path . '/Resources/translations/*.yml') as $yamlFilePath) {
+                foreach (glob($path . '/Resources/translations/*.yml') as $yamlFilePath) {
                     $domainAndLocale = explode('.', basename($yamlFilePath, '.yml'));
-                    if(count($domainAndLocale) == 2) {
+                    if (count($domainAndLocale) == 2) {
                         $translator->addResource('yaml', $yamlFilePath, $domainAndLocale[1], $domainAndLocale[0]);
                     }
                 }
+
                 return $translator;
             }
         ));
@@ -83,6 +84,7 @@ abstract class AbstractSilexBundleProvider implements ServiceProviderInterface
         $this->app['twig.loader.filesystem'] = $this->app->share($this->app->extend('twig.loader.filesystem',
             function(\Twig_Loader_Filesystem $twigLoaderFilesystem) use ($path, $namespace) {
                 $twigLoaderFilesystem->addPath($path. '/Resources/views', str_replace('\\', '', $namespace));
+
                 return $twigLoaderFilesystem;
             }
         ));
@@ -93,9 +95,10 @@ abstract class AbstractSilexBundleProvider implements ServiceProviderInterface
      */
     protected function getNamespace()
     {
-        if(is_null($this->reflectionClass)) {
+        if (is_null($this->reflectionClass)) {
             $this->assignReflectionClass();
         }
+
         return $this->reflectionClass->getNamespaceName();
     }
 
@@ -104,9 +107,10 @@ abstract class AbstractSilexBundleProvider implements ServiceProviderInterface
      */
     protected function getPath()
     {
-        if(is_null($this->reflectionClass)) {
+        if (is_null($this->reflectionClass)) {
             $this->assignReflectionClass();
         }
+
         return dirname($this->reflectionClass->getFileName());
     }
 

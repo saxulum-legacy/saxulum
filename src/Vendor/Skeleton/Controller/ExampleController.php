@@ -20,7 +20,7 @@ class ExampleController extends AbstractController
     }
 
     /**
-     * @param ControllerCollection $controllerCollection
+     * @param  ControllerCollection $controllerCollection
      * @return ControllerCollection
      */
     protected function addRoutes(ControllerCollection $controllerCollection)
@@ -32,6 +32,7 @@ class ExampleController extends AbstractController
             ->assert('id', '\d+')
             ->bind('example_edit')
         ;
+
         return $controllerCollection;
     }
 
@@ -55,22 +56,23 @@ class ExampleController extends AbstractController
      */
     public function editAction(Request $request, $id)
     {
-        if(is_null($id)) {
+        if (is_null($id)) {
             $example = new Example();
         } else {
             $example = $this->getDoctrine()->getManager()->getRepository(get_class(new Example()))->find($id);
-            if(is_null($example)) {
+            if (is_null($example)) {
                 throw new NotFoundHttpException("Can't find example with id {$id}");
             }
         }
 
         $exampleForm = $this->createForm(new ExampleType(), $example);
 
-        if('POST' === $request->getMethod()) {
+        if ('POST' === $request->getMethod()) {
             $exampleForm->bind($request);
-            if($exampleForm->isValid()) {
+            if ($exampleForm->isValid()) {
                 $this->getDoctrine()->getManager()->persist($example);
                 $this->getDoctrine()->getManager()->flush();
+
                 return new RedirectResponse($this->getUrlGenerator()->generate('example_edit', array('id' => $example->getId())));
             }
         }
