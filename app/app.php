@@ -1,5 +1,6 @@
 <?php
 
+use Application\Provider\AdvancedKnpMenuServiceProvider;
 use Dominikzogg\Silex\Provider\DoctrineOrmManagerRegistryProvider;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Dflydev\Silex\Provider\DoctrineOrm\DoctrineOrmServiceProvider;
@@ -57,6 +58,7 @@ $app->register(new ServiceControllerServiceProvider());
 // register usefull external providers
 $app->register(new DoctrineOrmServiceProvider());
 $app->register(new DoctrineOrmManagerRegistryProvider());
+$app->register(new AdvancedKnpMenuServiceProvider());
 
 // add form extension
 $app['form.extensions'] = $app->share($app->extend('form.extensions', function ($extensions, $app) {
