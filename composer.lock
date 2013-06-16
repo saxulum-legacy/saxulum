@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "47a33806157ab35893c449185f5a9d8a",
+    "hash": "f7aaf446b2101cc34fae80f445fed353",
     "packages": [
         {
             "name": "dflydev/doctrine-orm-service-provider",
@@ -274,16 +274,16 @@
         },
         {
             "name": "dominikzogg/doctrine-orm-registry-manager-provider",
-            "version": "1.0",
+            "version": "1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dominikzogg/doctrine-orm-registry-manager-provider.git",
-                "reference": "1.0"
+                "reference": "1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dominikzogg/doctrine-orm-registry-manager-provider/zipball/1.0",
-                "reference": "1.0",
+                "url": "https://api.github.com/repos/dominikzogg/doctrine-orm-registry-manager-provider/zipball/1.1",
+                "reference": "1.1",
                 "shasum": ""
             },
             "require": {
@@ -292,9 +292,7 @@
                 "pimple/pimple": "1.*@dev"
             },
             "require-dev": {
-                "cilex/cilex": "1.*@dev",
-                "cilex/console-service-provider": "@dev",
-                "silex/silex": "1.*@dev"
+                "phpunit/phpunit": "3.7.*"
             },
             "type": "library",
             "autoload": {
@@ -323,7 +321,7 @@
                 "registrymanager",
                 "silex"
             ],
-            "time": "2013-06-05 18:41:54"
+            "time": "2013-06-16 13:04:33"
         },
         {
             "name": "igorw/config-service-provider",
