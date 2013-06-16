@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "98b379237372f71f3ee61b220d6de612",
+    "hash": "4b09fc678e4e4bc66f3455ffa9cca738",
     "packages": [
         {
             "name": "dflydev/doctrine-orm-service-provider",
@@ -294,10 +294,15 @@
             "require-dev": {
                 "phpunit/phpunit": "3.7.*"
             },
+            "suggest": {
+                "symfony/doctrine-bridge": ">=2.2,<3.0",
+                "symfony/form": ">=2.2,<3.0"
+            },
             "type": "library",
             "autoload": {
                 "psr-0": {
                     "Dominikzogg\\Cilex": "src",
+                    "Dominikzogg\\Doctrine": "src",
                     "Dominikzogg\\Pimple": "src",
                     "Dominikzogg\\Silex": "src"
                 }
@@ -321,7 +326,7 @@
                 "registrymanager",
                 "silex"
             ],
-            "time": "2013-06-16 15:56:03"
+            "time": "2013-06-16 16:45:08"
         },
         {
             "name": "igorw/config-service-provider",
