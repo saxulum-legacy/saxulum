@@ -14,7 +14,7 @@ class ExampleController extends AbstractController
     /**
      * @return string
      */
-    public function getMount()
+    public function getPrefix()
     {
         return '/';
     }

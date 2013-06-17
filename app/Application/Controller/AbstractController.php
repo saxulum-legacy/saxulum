@@ -23,11 +23,6 @@ abstract class AbstractController implements MountableControllerProviderInterfac
      */
     protected $container;
 
-    /**
-     * @return string
-     */
-    abstract public function getMount();
-
     public function connect(Application $app)
     {
         $this->container = $app;

@@ -7,9 +7,9 @@ use Silex\ControllerProviderInterface;
 interface MountableControllerProviderInterface extends ControllerProviderInterface
 {
     /**
-     * Return the mount string
+     * Return the prefix string
      *
      * @return string
      */
-    public function getMount();
+    public function getPrefix();
 }

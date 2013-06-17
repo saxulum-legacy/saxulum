@@ -42,7 +42,7 @@ abstract class AbstractSilexBundleProvider implements ServiceProviderInterface
                !$reflectionClass->isInterface()) {
                 $controller = new $controllerNamespace();
                 /** @var AbstractController $controller */
-                $this->app->mount($controller->getMount(), $controller);
+                $this->app->mount($controller->getPrefix(), $controller);
             }
         }
     }
