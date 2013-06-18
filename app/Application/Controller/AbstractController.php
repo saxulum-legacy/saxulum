@@ -4,7 +4,6 @@ namespace Application\Controller;
 
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Psr\Log\LoggerInterface;
-use Silex\Application;
 use Silex\HttpCache;
 use Symfony\Component\Form\Form;
 use Symfony\Component\Form\FormBuilderInterface;
