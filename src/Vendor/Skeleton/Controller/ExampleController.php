@@ -2,7 +2,7 @@
 
 namespace Vendor\Skeleton\Controller;
 
-use Silex\ControllerCollection;
+use Silex\Application;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -11,29 +11,18 @@ use Vendor\Skeleton\Form\Type\ExampleType;
 
 class ExampleController extends AbstractController
 {
-    /**
-     * @return string
-     */
-    public function getPrefix()
+    public static function addRoutes(Application $app, $serviceId)
     {
-        return '/';
-    }
-
-    /**
-     * @param  ControllerCollection $controllerCollection
-     * @return ControllerCollection
-     */
-    protected function addRoutes(ControllerCollection $controllerCollection)
-    {
-        $controllerCollection->match('/', array($this, 'listAction'))->bind('example_list');
-        $controllerCollection
-            ->match('/edit/{id}', array($this, 'editAction'))
+        $app
+            ->match('/', $serviceId . ':listAction')
+            ->bind('example_list')
+        ;
+        $app
+            ->match('/edit/{id}', $serviceId . ':editAction')
             ->value('id', null)
             ->assert('id', '\d+')
             ->bind('example_edit')
         ;
-
-        return $controllerCollection;
     }
 
     /**

@@ -2,7 +2,6 @@
 
 namespace Application\Provider;
 
-use Application\Controller\AbstractController;
 use Silex\Application;
 use Silex\ServiceProviderInterface;
 use Symfony\Component\Translation\Loader\YamlFileLoader;
@@ -33,16 +32,19 @@ abstract class AbstractSilexBundleProvider implements ServiceProviderInterface
 
     protected function addController()
     {
+        $app = $this->app;
         foreach (glob($this->getPath() . '/Controller/*Controller.php') as $controllerFilePath) {
             $controllerClassName = basename($controllerFilePath, '.php');
             $controllerNamespace = $this->getNamespace() . '\\Controller\\' . $controllerClassName;
             $reflectionClass = new \ReflectionClass($controllerNamespace);
-            if($reflectionClass->implementsInterface('Application\Controller\MountableControllerProviderInterface') &&
+            if($reflectionClass->implementsInterface('Application\Controller\ControllerRouteInterface') &&
                !$reflectionClass->isAbstract() &&
                !$reflectionClass->isInterface()) {
-                $controller = new $controllerNamespace();
-                /** @var AbstractController $controller */
-                $this->app->mount($controller->getPrefix(), $controller);
+                $serviceId = $this->namespaceToServiceId($controllerNamespace);
+                $app[$serviceId] = $app->share(function() use ($app, $controllerNamespace) {
+                    return new $controllerNamespace($app);
+                });
+                $controllerNamespace::addRoutes($app, $serviceId);
             }
         }
     }
@@ -112,6 +114,15 @@ abstract class AbstractSilexBundleProvider implements ServiceProviderInterface
         }
 
         return dirname($this->reflectionClass->getFileName());
+    }
+
+    /**
+     * @param  string $namespace
+     * @return string
+     */
+    protected function namespaceToServiceId($namespace)
+    {
+        return strtolower(str_replace("\\", '.', $namespace));
     }
 
     protected function assignReflectionClass()
