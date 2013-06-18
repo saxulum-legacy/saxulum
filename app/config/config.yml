@@ -13,3 +13,5 @@ security.firewalls:
 monolog.logfile: %root_dir%/app/log/%env%.log
 
 orm.proxies_dir: %root_dir%/app/cache/%env%/doctrine/proxies
+
+profiler.cache_dir: %root_dir%/app/cache/%env%/profiler

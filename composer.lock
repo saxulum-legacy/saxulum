@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "4b09fc678e4e4bc66f3455ffa9cca738",
+    "hash": "5bb2cc772d5478ec4eea18972de42b7d",
     "packages": [
         {
             "name": "dflydev/doctrine-orm-service-provider",
@@ -274,16 +274,16 @@
         },
         {
             "name": "dominikzogg/doctrine-orm-manager-registry-provider",
-            "version": "1.1",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dominikzogg/doctrine-orm-manager-registry-provider.git",
-                "reference": "1.1"
+                "reference": "1.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dominikzogg/doctrine-orm-manager-registry-provider/zipball/1.1",
-                "reference": "1.1",
+                "url": "https://api.github.com/repos/dominikzogg/doctrine-orm-manager-registry-provider/zipball/1.1.1",
+                "reference": "1.1.1",
                 "shasum": ""
             },
             "require": {
@@ -326,7 +326,7 @@
                 "registrymanager",
                 "silex"
             ],
-            "time": "2013-06-16 16:45:08"
+            "time": "2013-06-16 20:00:28"
         },
         {
             "name": "igorw/config-service-provider",
@@ -678,6 +678,51 @@
             "time": "2013-05-03 16:49:57"
         },
         {
+            "name": "silex/web-profiler",
+            "version": "dev-master",
+            "target-dir": "Silex/Provider",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silexphp/Silex-WebProfiler.git",
+                "reference": "3d875ac4f583e893a076ec51478e38eeaf0cb562"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silexphp/Silex-WebProfiler/zipball/3d875ac4f583e893a076ec51478e38eeaf0cb562",
+                "reference": "3d875ac4f583e893a076ec51478e38eeaf0cb562",
+                "shasum": ""
+            },
+            "require": {
+                "silex/silex": ">=1.0,<2.0",
+                "symfony/stopwatch": ">=2.2,<3.0",
+                "symfony/web-profiler-bundle": ">=2.2,<3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Silex\\Provider\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "A WebProfiler for Silex",
+            "homepage": "http://silex.sensiolabs.org/",
+            "time": "2013-05-03 17:04:41"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v4.1.8",
             "source": {
@@ -885,17 +930,17 @@
         },
         {
             "name": "symfony/doctrine-bridge",
-            "version": "v2.3.0",
+            "version": "v2.3.1",
             "target-dir": "Symfony/Bridge/Doctrine",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/DoctrineBridge.git",
-                "reference": "v2.3.0-RC1"
+                "reference": "v2.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/DoctrineBridge/zipball/v2.3.0-RC1",
-                "reference": "v2.3.0-RC1",
+                "url": "https://api.github.com/repos/symfony/DoctrineBridge/zipball/v2.3.1",
+                "reference": "v2.3.1",
                 "shasum": ""
             },
             "require": {
@@ -951,17 +996,17 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.3.0",
+            "version": "v2.3.1",
             "target-dir": "Symfony/Component/EventDispatcher",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "v2.3.0-RC1"
+                "reference": "v2.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/v2.3.0-RC1",
-                "reference": "v2.3.0-RC1",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/v2.3.1",
+                "reference": "v2.3.1",
                 "shasum": ""
             },
             "require": {
@@ -1161,17 +1206,17 @@
         },
         {
             "name": "symfony/http-kernel",
-            "version": "v2.3.0",
+            "version": "v2.3.1",
             "target-dir": "Symfony/Component/HttpKernel",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "v2.3.0"
+                "reference": "v2.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/v2.3.0",
-                "reference": "v2.3.0",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/v2.3.1",
+                "reference": "v2.3.1",
                 "shasum": ""
             },
             "require": {
@@ -1227,7 +1272,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "http://symfony.com",
-            "time": "2013-06-03 14:13:35"
+            "time": "2013-06-11 11:46:38"
         },
         {
             "name": "symfony/icu",
@@ -1466,17 +1511,17 @@
         },
         {
             "name": "symfony/routing",
-            "version": "v2.3.0",
+            "version": "v2.3.1",
             "target-dir": "Symfony/Component/Routing",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Routing.git",
-                "reference": "v2.3.0"
+                "reference": "v2.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Routing/zipball/v2.3.0",
-                "reference": "v2.3.0",
+                "url": "https://api.github.com/repos/symfony/Routing/zipball/v2.3.1",
+                "reference": "v2.3.1",
                 "shasum": ""
             },
             "require": {
@@ -1591,18 +1636,65 @@
             "time": "2013-06-02 22:50:02"
         },
         {
+            "name": "symfony/stopwatch",
+            "version": "v2.3.1",
+            "target-dir": "Symfony/Component/Stopwatch",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Stopwatch.git",
+                "reference": "v2.3.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Stopwatch/zipball/v2.3.1",
+                "reference": "v2.3.1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Stopwatch\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Stopwatch Component",
+            "homepage": "http://symfony.com",
+            "time": "2013-04-17 07:17:10"
+        },
+        {
             "name": "symfony/translation",
-            "version": "v2.3.0",
+            "version": "v2.3.1",
             "target-dir": "Symfony/Component/Translation",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Translation.git",
-                "reference": "v2.3.0-RC1"
+                "reference": "v2.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Translation/zipball/v2.3.0-RC1",
-                "reference": "v2.3.0-RC1",
+                "url": "https://api.github.com/repos/symfony/Translation/zipball/v2.3.1",
+                "reference": "v2.3.1",
                 "shasum": ""
             },
             "require": {
@@ -1773,6 +1865,61 @@
             "time": "2013-06-10 16:23:25"
         },
         {
+            "name": "symfony/web-profiler-bundle",
+            "version": "v2.3.1",
+            "target-dir": "Symfony/Bundle/WebProfilerBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/WebProfilerBundle.git",
+                "reference": "v2.3.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/WebProfilerBundle/zipball/v2.3.1",
+                "reference": "v2.3.1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/http-kernel": ">=2.2,<3.0",
+                "symfony/routing": ">=2.2,<3.0",
+                "symfony/twig-bridge": ">=2.2,<3.0"
+            },
+            "require-dev": {
+                "symfony/config": ">=2.2,<3.0",
+                "symfony/dependency-injection": ">=2.0,<3.0",
+                "symfony/stopwatch": ">=2.2,<3.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Bundle\\WebProfilerBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony WebProfilerBundle",
+            "homepage": "http://symfony.com",
+            "time": "2013-05-24 14:20:41"
+        },
+        {
             "name": "symfony/yaml",
             "version": "v2.3.1",
             "target-dir": "Symfony/Component/Yaml",
@@ -1924,7 +2071,8 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "knplabs/knp-menu": 20
+        "knplabs/knp-menu": 20,
+        "silex/web-profiler": 20
     },
     "platform": [
 

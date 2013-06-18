@@ -17,6 +17,7 @@ use Silex\Provider\TranslationServiceProvider;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
 use Silex\Provider\ValidatorServiceProvider;
+use Silex\Provider\WebProfilerServiceProvider;
 use Silex\Application;
 use Symfony\Bridge\Doctrine\Form\DoctrineOrmExtension;
 
@@ -59,6 +60,10 @@ $app->register(new ServiceControllerServiceProvider());
 $app->register(new DoctrineOrmServiceProvider());
 $app->register(new DoctrineOrmManagerRegistryProvider());
 $app->register(new AdvancedKnpMenuServiceProvider());
+
+if($app['debug']) {
+    $app->register(new WebProfilerServiceProvider());
+}
 
 // add form extension
 $app['form.extensions'] = $app->share($app->extend('form.extensions', function ($extensions, $app) {
