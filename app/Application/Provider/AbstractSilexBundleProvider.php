@@ -33,9 +33,7 @@ abstract class AbstractSilexBundleProvider implements ServiceProviderInterface
     protected function addController()
     {
         $controllerMapJson = $this->getCacheDir() . '/controller.map.json';
-        if (!$this->app['debug'] && is_file($controllerMapJson)) {
-            $controllerMap = json_decode(file_get_contents($controllerMapJson), true);
-        } else {
+        if ($this->app['debug'] || !is_file($controllerMapJson)) {
             $controllerMap = array();
             foreach (glob($this->getPath() . '/Controller/*Controller.php') as $controllerFilePath) {
                 $controllerClassName = basename($controllerFilePath, '.php');
@@ -49,7 +47,7 @@ abstract class AbstractSilexBundleProvider implements ServiceProviderInterface
             }
             file_put_contents($controllerMapJson, json_encode($controllerMap));
         }
-
+        $controllerMap = json_decode(file_get_contents($controllerMapJson), true);
         $app = $this->app;
         foreach ($controllerMap as $serviceId => $controllerNamespace) {
             $this->app[$serviceId] = $this->app->share(function() use ($app, $controllerNamespace) {
@@ -82,9 +80,7 @@ abstract class AbstractSilexBundleProvider implements ServiceProviderInterface
     protected function addTranslatorRessources()
     {
         $translationMapJson = $this->getCacheDir() . '/translation.map.json';
-        if (!$this->app['debug'] && is_file($translationMapJson)) {
-            $translationMap = json_decode(file_get_contents($translationMapJson), true);
-        } else {
+        if ($this->app['debug'] || !is_file($translationMapJson)) {
             $translationMap = array();
             foreach (glob($this->getPath() . '/Resources/translations/*.yml') as $yamlFilePath) {
                 $domainAndLocale = explode('.', basename($yamlFilePath, '.yml'));
@@ -98,7 +94,7 @@ abstract class AbstractSilexBundleProvider implements ServiceProviderInterface
             }
             file_put_contents($translationMapJson, json_encode($translationMap));
         }
-
+        $translationMap = json_decode(file_get_contents($translationMapJson), true);
         $this->app['translator'] = $this->app->share($this->app->extend('translator',
             function(Translator $translator) use ($translationMap) {
                 $translator->addLoader('yaml', new YamlFileLoader());
