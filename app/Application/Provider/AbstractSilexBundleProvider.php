@@ -33,19 +33,29 @@ abstract class AbstractSilexBundleProvider implements ServiceProviderInterface
     protected function addController()
     {
         $app = $this->app;
-        foreach (glob($this->getPath() . '/Controller/*Controller.php') as $controllerFilePath) {
-            $controllerClassName = basename($controllerFilePath, '.php');
-            $controllerNamespace = $this->getNamespace() . '\\Controller\\' . $controllerClassName;
-            $reflectionClass = new \ReflectionClass($controllerNamespace);
-            if($reflectionClass->implementsInterface('Application\Controller\ControllerRouteInterface') &&
-               !$reflectionClass->isAbstract() &&
-               !$reflectionClass->isInterface()) {
-                $serviceId = $this->namespaceToServiceId($controllerNamespace);
-                $app[$serviceId] = $app->share(function() use ($app, $controllerNamespace) {
-                    return new $controllerNamespace($app);
-                });
-                $controllerNamespace::addRoutes($app, $serviceId);
+        $controllerMapJson = $app['cache_dir'] . '/controllerMap.json';
+        if(file_exists($controllerMapJson)) {
+            $controllerMap = json_decode(file_get_contents($controllerMapJson));
+        } else {
+            $controllerMap = array();
+            foreach (glob($this->getPath() . '/Controller/*Controller.php') as $controllerFilePath) {
+                $controllerClassName = basename($controllerFilePath, '.php');
+                $controllerNamespace = $this->getNamespace() . '\\Controller\\' . $controllerClassName;
+                $reflectionClass = new \ReflectionClass($controllerNamespace);
+                if($reflectionClass->implementsInterface('Application\Controller\ControllerRouteInterface') &&
+                    !$reflectionClass->isAbstract() &&
+                    !$reflectionClass->isInterface()) {
+                    $controllerMap[$this->namespaceToServiceId($controllerNamespace)] = $controllerNamespace;
+                }
             }
+            file_put_contents($controllerMapJson, json_encode($controllerMap));
+        }
+
+        foreach($controllerMap as $serviceId => $controllerNamespace) {
+            $app[$serviceId] = $app->share(function() use ($app, $controllerNamespace) {
+                return new $controllerNamespace($app);
+            });
+            $controllerNamespace::addRoutes($app, $serviceId);
         }
     }
 

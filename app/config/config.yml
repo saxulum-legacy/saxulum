@@ -1,5 +1,6 @@
 env: %env%
 root_dir: %root_dir%
+cache_dir: %root_dir%/app/cache/%env%
 
 twig.options:
   cache: %root_dir%/app/cache/%env%/twig
