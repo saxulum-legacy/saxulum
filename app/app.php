@@ -61,7 +61,7 @@ $app->register(new DoctrineOrmServiceProvider());
 $app->register(new DoctrineOrmManagerRegistryProvider());
 $app->register(new AdvancedKnpMenuServiceProvider());
 
-if($app['debug']) {
+if ($app['debug']) {
     $app->register(new WebProfilerServiceProvider());
 }
 
