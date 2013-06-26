@@ -13,7 +13,7 @@ swiftmailer.options:
 
 db.options:
   driver: pdo_mysql
-  dbname: silexskeleton
+  dbname: saxulum
   host: localhost
   user: root
   password: root
