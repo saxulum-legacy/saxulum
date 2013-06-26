@@ -1,3 +1,3 @@
-silexskeleton
+saxulum
 
-howto use: composer create-project dominikzogg/silexskeleton myproject --stability="dev"
+howto use: composer create-project saxulum/saxulum myproject --stability="dev"
