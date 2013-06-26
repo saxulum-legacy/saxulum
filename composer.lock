@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "5bb2cc772d5478ec4eea18972de42b7d",
+    "hash": "0985da85b47c4b7560e6017cd49a516c",
     "packages": [
         {
             "name": "dflydev/doctrine-orm-service-provider",
@@ -122,7 +122,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -387,16 +387,16 @@
         },
         {
             "name": "knplabs/knp-menu",
-            "version": "dev-master",
+            "version": "v2.0.0-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpMenu.git",
-                "reference": "6e3d276aef1d621249c23e0321f9737b45dc5084"
+                "reference": "v2.0.0-alpha1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpMenu/zipball/6e3d276aef1d621249c23e0321f9737b45dc5084",
-                "reference": "6e3d276aef1d621249c23e0321f9737b45dc5084",
+                "url": "https://api.github.com/repos/KnpLabs/KnpMenu/zipball/v2.0.0-alpha1",
+                "reference": "v2.0.0-alpha1",
                 "shasum": ""
             },
             "require": {
@@ -433,7 +433,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "KnpLabs",
+                    "name": "Knplabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -447,7 +447,7 @@
                 "menu",
                 "tree"
             ],
-            "time": "2013-05-20 16:52:41"
+            "time": "2013-06-23 19:58:17"
         },
         {
             "name": "monolog/monolog",
@@ -596,6 +596,64 @@
             "time": "2012-12-21 11:40:51"
         },
         {
+            "name": "saxulum/saxulum-framework",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/saxulum/saxulum-framework.git",
+                "reference": "99ff936edbb8768d9dcbea4901245dad0800dfc0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/saxulum/saxulum-framework/zipball/99ff936edbb8768d9dcbea4901245dad0800dfc0",
+                "reference": "99ff936edbb8768d9dcbea4901245dad0800dfc0",
+                "shasum": ""
+            },
+            "require": {
+                "dflydev/doctrine-orm-service-provider": "v1.0.0",
+                "dominikzogg/doctrine-orm-manager-registry-provider": ">=1.1,<2.0",
+                "igorw/config-service-provider": "v1.2.0",
+                "knplabs/knp-menu": "2.0.*@alpha",
+                "monolog/monolog": "1.5.*",
+                "php": ">=5.3.3",
+                "silex/silex": ">=1.0,<2.0",
+                "silex/web-profiler": ">=1.0,<2.0",
+                "swiftmailer/swiftmailer": ">=4.2.0,<5.1-dev",
+                "symfony/config": ">=2.3,<3.0",
+                "symfony/doctrine-bridge": ">=2.3,<3.0",
+                "symfony/form": ">=2.3,<3.0",
+                "symfony/security": ">=2.3,<3.0",
+                "symfony/translation": ">=2.3,<3.0",
+                "symfony/twig-bridge": ">=2.3,<3.0",
+                "symfony/validator": ">=2.3,<3.0",
+                "symfony/yaml": ">=2.3,<3.0",
+                "twig/twig": ">=1.0,<2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Saxulum\\SaxulumFramework": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dominik Zogg",
+                    "email": "dominik.zogg@gmail.com"
+                }
+            ],
+            "description": "framework files for saxulum",
+            "keywords": [
+                "framework",
+                "saxulum",
+                "silex"
+            ],
+            "time": "2013-06-26 21:09:56"
+        },
+        {
             "name": "silex/silex",
             "version": "v1.0.0",
             "source": {
@@ -679,17 +737,17 @@
         },
         {
             "name": "silex/web-profiler",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "target-dir": "Silex/Provider",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silexphp/Silex-WebProfiler.git",
-                "reference": "3d875ac4f583e893a076ec51478e38eeaf0cb562"
+                "reference": "v1.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silexphp/Silex-WebProfiler/zipball/3d875ac4f583e893a076ec51478e38eeaf0cb562",
-                "reference": "3d875ac4f583e893a076ec51478e38eeaf0cb562",
+                "url": "https://api.github.com/repos/silexphp/Silex-WebProfiler/zipball/v1.0.0",
+                "reference": "v1.0.0",
                 "shasum": ""
             },
             "require": {
@@ -720,20 +778,20 @@
             ],
             "description": "A WebProfiler for Silex",
             "homepage": "http://silex.sensiolabs.org/",
-            "time": "2013-05-03 17:04:41"
+            "time": "2013-03-08 07:16:44"
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v4.1.8",
+            "version": "v5.0.1",
             "source": {
                 "type": "git",
-                "url": "git://github.com/swiftmailer/swiftmailer.git",
-                "reference": "v4.1.8"
+                "url": "https://github.com/swiftmailer/swiftmailer.git",
+                "reference": "v5.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/swiftmailer/swiftmailer/zipball/v4.1.8",
-                "reference": "v4.1.8",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/v5.0.1",
+                "reference": "v5.0.1",
                 "shasum": ""
             },
             "require": {
@@ -742,7 +800,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.1-dev"
+                    "dev-master": "5.1-dev"
                 }
             },
             "autoload": {
@@ -752,7 +810,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL"
+                "MIT"
             ],
             "authors": [
                 {
@@ -769,7 +827,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2012-06-17 13:55:34"
+            "time": "2013-06-17 13:32:32"
         },
         {
             "name": "symfony/config",
@@ -1967,53 +2025,6 @@
             "time": "2013-05-10 18:12:13"
         },
         {
-            "name": "twig/extensions",
-            "version": "v1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fabpot/Twig-extensions.git",
-                "reference": "v1.0.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig-extensions/zipball/v1.0.0",
-                "reference": "v1.0.0",
-                "shasum": ""
-            },
-            "require": {
-                "twig/twig": "1.*"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Twig_Extensions_": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                }
-            ],
-            "description": "Common additional features for Twig that do not directly belong in core",
-            "homepage": "https://github.com/fabpot/Twig-extensions",
-            "keywords": [
-                "debug",
-                "i18n",
-                "text"
-            ],
-            "time": "2013-02-28 14:21:30"
-        },
-        {
             "name": "twig/twig",
             "version": "v1.13.1",
             "source": {
@@ -2069,10 +2080,9 @@
     "aliases": [
 
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "alpha",
     "stability-flags": {
-        "knplabs/knp-menu": 20,
-        "silex/web-profiler": 20
+        "saxulum/saxulum-framework": 20
     },
     "platform": [
 

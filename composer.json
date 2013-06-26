@@ -1,33 +1,18 @@
 {
-    "name": "dominikzogg/silexskeleton",
+    "name": "saxulum/saxulum",
     "license": "MIT",
     "type": "project",
-    "description": "A symfony like silex skeleton",
+    "description": "saxulum a silex skeleton, very symfony2 like",
     "autoload":
     {
         "psr-0":
         {
-            "": "src/",
-            "Application": "app/"
+            "": "src/"
         }
     },
     "require": {
-        "dflydev/doctrine-orm-service-provider": "v1.0.0",
-        "dominikzogg/doctrine-orm-manager-registry-provider": "~1.1",
-        "igorw/config-service-provider": "v1.2.0",
-        "knplabs/knp-menu": "2.0.*@dev",
-        "monolog/monolog": "1.5.*",
-        "silex/silex": "~1.0",
-        "silex/web-profiler": "dev-master@dev",
-        "swiftmailer/swiftmailer": ">=4.1.2,<4.2-dev",
-        "symfony/doctrine-bridge": ">=2.3,<3.0",
-        "symfony/config": ">=2.3,<3.0",
-        "symfony/form": ">=2.3,<3.0",
-        "symfony/security": ">=2.3,<3.0",
-        "symfony/translation": ">=2.3,<3.0",
-        "symfony/twig-bridge": ">=2.3,<3.0",
-        "symfony/validator": ">=2.3,<3.0",
-        "symfony/yaml": ">=2.3,<3.0",
-        "twig/extensions": "1.0.*"
-    }
+        "saxulum/saxulum-framework": "dev-master@dev"
+    },
+    "prefer-stable": true,
+    "minimum-stability": "alpha"
 }

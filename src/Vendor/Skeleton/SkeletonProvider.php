@@ -2,7 +2,6 @@
 
 namespace Vendor\Skeleton;
 
-use Application\Provider\AbstractSilexBundleProvider;
-use Silex\Application;
+use Saxulum\SaxulumFramework\Provider\AbstractSilexBundleProvider;
 
 class SkeletonProvider extends AbstractSilexBundleProvider {}

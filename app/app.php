@@ -1,10 +1,10 @@
 <?php
 
-use Application\Provider\AdvancedKnpMenuServiceProvider;
 use Dominikzogg\Silex\Provider\DoctrineOrmManagerRegistryProvider;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Dflydev\Silex\Provider\DoctrineOrm\DoctrineOrmServiceProvider;
 use Igorw\Silex\ConfigServiceProvider;
+use Saxulum\SaxulumFramework\Provider\AdvancedKnpMenuServiceProvider;
 use Silex\Provider\DoctrineServiceProvider;
 use Silex\Provider\FormServiceProvider;
 use Silex\Provider\HttpCacheServiceProvider;
@@ -62,7 +62,8 @@ $app->register(new DoctrineOrmManagerRegistryProvider());
 $app->register(new AdvancedKnpMenuServiceProvider());
 
 if ($app['debug']) {
-    $app->register(new WebProfilerServiceProvider());
+    $app->register($webProfilerProvider = new WebProfilerServiceProvider());
+    $app->mount('_profiler', $webProfilerProvider);
 }
 
 // add form extension
