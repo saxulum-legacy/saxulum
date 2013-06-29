@@ -26,7 +26,7 @@ if (!function_exists('intl_get_error_code')) {
 $app = new Application();
 $app['debug'] = getenv('APP_DEBUG') ? true : false;
 
-// register all rewuired saxulum framework providers
+// register all required saxulum framework providers
 $app->register(new SaxulumServiceProvider());
 
 // config overrides
