@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "0985da85b47c4b7560e6017cd49a516c",
+    "hash": "006475e740008b11bbd535b4f98dc8b0",
     "packages": [
         {
             "name": "dflydev/doctrine-orm-service-provider",
@@ -122,9 +122,9 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -596,17 +596,62 @@
             "time": "2012-12-21 11:40:51"
         },
         {
+            "name": "saxulum/saxulum-controller-provider",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/saxulum/saxulum-controller-provider.git",
+                "reference": "49b4679c44ad6755707ff88271c666fa480fb7c8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/saxulum/saxulum-controller-provider/zipball/49b4679c44ad6755707ff88271c666fa480fb7c8",
+                "reference": "49b4679c44ad6755707ff88271c666fa480fb7c8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "silex/silex": ">=1.0,<2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "symfony/browser-kit": ">=2.3,<3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Saxulum\\SaxulumControllerProvider": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dominik Zogg",
+                    "email": "dominik.zogg@gmail.com"
+                }
+            ],
+            "description": "A controller registration provider",
+            "keywords": [
+                "controller",
+                "silex"
+            ],
+            "time": "2013-06-29 23:42:36"
+        },
+        {
             "name": "saxulum/saxulum-framework",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/saxulum/saxulum-framework.git",
-                "reference": "e838cb10470cce12dbfbc348dcce476511e5d936"
+                "reference": "e6df38639e3d54da2861f519b6f9a585b21b93a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/saxulum/saxulum-framework/zipball/e838cb10470cce12dbfbc348dcce476511e5d936",
-                "reference": "e838cb10470cce12dbfbc348dcce476511e5d936",
+                "url": "https://api.github.com/repos/saxulum/saxulum-framework/zipball/e6df38639e3d54da2861f519b6f9a585b21b93a8",
+                "reference": "e6df38639e3d54da2861f519b6f9a585b21b93a8",
                 "shasum": ""
             },
             "require": {
@@ -616,6 +661,7 @@
                 "knplabs/knp-menu": "2.0.*@alpha",
                 "monolog/monolog": "1.5.*",
                 "php": ">=5.3.3",
+                "saxulum/saxulum-controller-provider": "dev-master",
                 "silex/silex": ">=1.0,<2.0",
                 "silex/web-profiler": ">=1.0,<2.0",
                 "swiftmailer/swiftmailer": ">=4.2.0,<5.1-dev",
@@ -651,7 +697,7 @@
                 "saxulum",
                 "silex"
             ],
-            "time": "2013-06-29 12:19:03"
+            "time": "2013-06-29 22:16:45"
         },
         {
             "name": "silex/silex",
@@ -2080,7 +2126,7 @@
     "aliases": [
 
     ],
-    "minimum-stability": "alpha",
+    "minimum-stability": "dev",
     "stability-flags": {
         "saxulum/saxulum-framework": 20
     },

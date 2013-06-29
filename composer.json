@@ -13,6 +13,6 @@
     "require": {
         "saxulum/saxulum-framework": "dev-master@dev"
     },
-    "prefer-stable": true,
-    "minimum-stability": "alpha"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
