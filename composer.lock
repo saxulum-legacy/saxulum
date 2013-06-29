@@ -601,12 +601,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/saxulum/saxulum-framework.git",
-                "reference": "99ff936edbb8768d9dcbea4901245dad0800dfc0"
+                "reference": "95c93c18fe963d1ab54aa21d9d858f708e835143"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/saxulum/saxulum-framework/zipball/99ff936edbb8768d9dcbea4901245dad0800dfc0",
-                "reference": "99ff936edbb8768d9dcbea4901245dad0800dfc0",
+                "url": "https://api.github.com/repos/saxulum/saxulum-framework/zipball/95c93c18fe963d1ab54aa21d9d858f708e835143",
+                "reference": "95c93c18fe963d1ab54aa21d9d858f708e835143",
                 "shasum": ""
             },
             "require": {
@@ -651,7 +651,7 @@
                 "saxulum",
                 "silex"
             ],
-            "time": "2013-06-26 21:09:56"
+            "time": "2013-06-29 11:28:00"
         },
         {
             "name": "silex/silex",
