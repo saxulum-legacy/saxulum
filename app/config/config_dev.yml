@@ -1,1 +1,4 @@
 monolog.level: 100
+
+assetic.options:
+  auto_dump_assets: true
