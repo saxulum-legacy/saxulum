@@ -1,6 +1,8 @@
 app/cache
 app/config/parameters.yml
 app/log
+css
+js
 vendor
 
 .idea
