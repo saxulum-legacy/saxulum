@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "006475e740008b11bbd535b4f98dc8b0",
+    "hash": "2ff5be8e17bc36cd6a2377e17ecf9989",
     "packages": [
         {
             "name": "dflydev/doctrine-orm-service-provider",
@@ -386,6 +386,17 @@
             "time": "2013-04-23 12:27:51"
         },
         {
+            "name": "jquery/jquery",
+            "version": "1.9.1",
+            "dist": {
+                "type": "file",
+                "url": "http://code.jquery.com/jquery-1.9.1.js",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "library"
+        },
+        {
             "name": "knplabs/knp-menu",
             "version": "v2.0.0-alpha1",
             "source": {
@@ -519,6 +530,47 @@
                 "minification"
             ],
             "time": "2013-06-01 22:13:43"
+        },
+        {
+            "name": "leafo/lessphp",
+            "version": "v0.3.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/leafo/lessphp.git",
+                "reference": "v0.3.9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/leafo/lessphp/zipball/v0.3.9",
+                "reference": "v0.3.9",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "lessc.inc.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Leaf Corcoran",
+                    "email": "leafot@gmail.com",
+                    "homepage": "http://leafo.net"
+                }
+            ],
+            "description": "lessphp is a compiler for LESS written in PHP.",
+            "homepage": "http://leafo.net/lessphp/",
+            "time": "2013-03-02 16:13:31"
         },
         {
             "name": "mheap/silex-assetic",
@@ -2346,6 +2398,33 @@
                 "templating"
             ],
             "time": "2013-06-06 06:06:01"
+        },
+        {
+            "name": "twitter/bootstrap",
+            "version": "v2.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twitter/bootstrap.git",
+                "reference": "v2.3.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twitter/bootstrap/zipball/v2.3.2",
+                "reference": "v2.3.2",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Sleek, intuitive, and powerful front-end framework for faster and easier web development.",
+            "homepage": "http://twitter.github.com/bootstrap/",
+            "keywords": [
+                "bootstrap",
+                "css"
+            ],
+            "time": "2013-05-17 17:26:09"
         }
     ],
     "packages-dev": [

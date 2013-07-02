@@ -11,8 +11,23 @@
         }
     },
     "require": {
-        "saxulum/saxulum-framework": "dev-master@dev"
+        "saxulum/saxulum-framework": "dev-master@dev",
+        "jquery/jquery": "~1.9.1",
+        "twitter/bootstrap": "~2.3.2"
     },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "jquery/jquery",
+                "version": "1.9.1",
+                "dist": {
+                    "url": "http://code.jquery.com/jquery-1.9.1.js",
+                    "type": "file"
+                }
+            }
+        }
+    ],
     "minimum-stability": "dev",
     "prefer-stable": true
 }
