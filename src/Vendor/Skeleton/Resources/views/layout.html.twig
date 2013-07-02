@@ -3,11 +3,23 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>{% block pagetitle %}{% endblock pagetitle %}</title>
     {% block stylesheet %}
-
-        {% stylesheets 'src/Vendor/Skeleton/Resources/public/css/*css' filter='csscopyfile' output='css/base.css' %}
+        {% stylesheets filter='lessphp,csscopyfile' output='css/libraries.css'
+            'vendor/twitter/bootstrap/less/bootstrap.less'
+            'vendor/twitter/bootstrap/less/responsive.less'
+        %}
             <link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
-
+        {% stylesheets filter='csscopyfile' output='css/base.css'
+            'src/Vendor/Skeleton/Resources/public/css/*css'
+        %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+        {% javascripts output='js/libraries.js'
+            'vendor/jquery/jquery/jquery-*.js'
+            'vendor/twitter/bootstrap/js/bootstrap-*.js'
+        %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
     {% endblock stylesheet %}
     {% block scripts %}{% endblock scripts %}
 </head>
