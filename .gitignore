@@ -1,8 +1,9 @@
-app/cache
-app/config/parameters.yml
-app/log
-css
-js
-vendor
+/app/cache
+/app/config/parameters.yml
+/app/log
+/css
+/image
+/js
+/vendor
 
 .idea
