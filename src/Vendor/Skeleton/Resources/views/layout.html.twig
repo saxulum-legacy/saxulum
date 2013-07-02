@@ -4,8 +4,8 @@
     <title>{% block pagetitle %}{% endblock pagetitle %}</title>
     {% block stylesheet %}
 
-        {% stylesheets 'src/Vendor/Skeleton/Resources/public/css/*css' filter='cssrewrite' output='css/base.css' %}
-            <link rel="stylesheet" href="/{{ asset_url }}" />
+        {% stylesheets 'src/Vendor/Skeleton/Resources/public/css/*css' filter='csscopyfile' output='css/base.css' %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
 
     {% endblock stylesheet %}
