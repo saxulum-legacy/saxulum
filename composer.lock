@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "2ff5be8e17bc36cd6a2377e17ecf9989",
+    "hash": "ff4d71e42b70efbd9c81a211618c6950",
     "packages": [
         {
             "name": "dflydev/doctrine-orm-service-provider",
@@ -122,9 +122,9 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -587,14 +587,14 @@
                 "shasum": ""
             },
             "require": {
-                "kriswallsmith/assetic": ">=1.0,<2.0",
+                "kriswallsmith/assetic": "~1.0",
                 "php": ">=5.3.0",
                 "symfony/finder": ">=2.1,<2.3-dev"
             },
             "require-dev": {
-                "phpunit/phpunit": ">=3.7.10.0,<3.8",
-                "silex/silex": ">=1.0,<2.0",
-                "twig/twig": ">=1.2,<2.0"
+                "phpunit/phpunit": "~3.7.10",
+                "silex/silex": "~1.0@dev",
+                "twig/twig": "~1.2"
             },
             "suggest": {
                 "twig/twig": "~1.2"
@@ -831,12 +831,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/saxulum/saxulum-framework.git",
-                "reference": "95e6384d8ddf2f89156401ee486f47d615c08982"
+                "reference": "ea0ec9ceaafc138d70a44bbca0b76cd085576c3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/saxulum/saxulum-framework/zipball/95e6384d8ddf2f89156401ee486f47d615c08982",
-                "reference": "95e6384d8ddf2f89156401ee486f47d615c08982",
+                "url": "https://api.github.com/repos/saxulum/saxulum-framework/zipball/ea0ec9ceaafc138d70a44bbca0b76cd085576c3e",
+                "reference": "ea0ec9ceaafc138d70a44bbca0b76cd085576c3e",
                 "shasum": ""
             },
             "require": {
@@ -844,21 +844,22 @@
                 "dominikzogg/doctrine-orm-manager-registry-provider": "~1.1",
                 "igorw/config-service-provider": "v1.2.0",
                 "knplabs/knp-menu": "2.0.*@alpha",
+                "leafo/lessphp": "~0.3.9",
                 "mheap/silex-assetic": "1.0.*@dev",
                 "monolog/monolog": "1.5.*",
                 "php": ">=5.3.3",
                 "saxulum/saxulum-controller-provider": "~1.0",
                 "silex/silex": "~1.0",
                 "silex/web-profiler": "~1.0",
-                "swiftmailer/swiftmailer": ">=4.2.0,<5.1-dev",
-                "symfony/config": ">=2.3,<3.0",
-                "symfony/doctrine-bridge": ">=2.3,<3.0",
-                "symfony/form": ">=2.3,<3.0",
-                "symfony/security": ">=2.3,<3.0",
-                "symfony/translation": ">=2.3,<3.0",
-                "symfony/twig-bridge": ">=2.3,<3.0",
-                "symfony/validator": ">=2.3,<3.0",
-                "symfony/yaml": ">=2.3,<3.0",
+                "swiftmailer/swiftmailer": "~5.0",
+                "symfony/config": "~2.3",
+                "symfony/doctrine-bridge": "~2.3",
+                "symfony/form": "~2.3",
+                "symfony/security": "~2.3",
+                "symfony/translation": "~2.3",
+                "symfony/twig-bridge": "~2.3",
+                "symfony/validator": "~2.3",
+                "symfony/yaml": "~2.3",
                 "twig/twig": "~1.0"
             },
             "type": "library",
@@ -883,20 +884,20 @@
                 "saxulum",
                 "silex"
             ],
-            "time": "2013-07-01 20:47:44"
+            "time": "2013-07-03 04:55:55"
         },
         {
             "name": "silex/silex",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Silex.git",
-                "reference": "v1.0.0"
+                "reference": "v1.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Silex/zipball/v1.0.0",
-                "reference": "v1.0.0",
+                "url": "https://api.github.com/repos/fabpot/Silex/zipball/v1.0.1",
+                "reference": "v1.0.1",
                 "shasum": ""
             },
             "require": {
@@ -909,7 +910,7 @@
             },
             "require-dev": {
                 "doctrine/dbal": ">=2.2.0,<2.4.0-dev",
-                "monolog/monolog": ">=1.4,<2.0,>=1.4.1",
+                "monolog/monolog": "~1.4,>=1.4.1",
                 "swiftmailer/swiftmailer": "5.*",
                 "symfony/browser-kit": ">=2.1,<2.4-dev",
                 "symfony/config": ">=2.1,<2.4-dev",
@@ -965,7 +966,7 @@
             "keywords": [
                 "microframework"
             ],
-            "time": "2013-05-03 16:49:57"
+            "time": "2013-07-04 06:25:40"
         },
         {
             "name": "silex/web-profiler",
