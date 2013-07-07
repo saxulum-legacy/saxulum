@@ -17,6 +17,6 @@ orm.proxies_dir: %root_dir%/app/cache/%env%/doctrine/proxies
 
 profiler.cache_dir: %root_dir%/app/cache/%env%/profiler
 
-assetic.path_to_web: %root_dir%
+assetic.path_to_web: %root_dir%/assets
 assetic.options:
   auto_dump_assets: false
