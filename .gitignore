@@ -1,9 +1,7 @@
 /app/cache
 /app/config/parameters.yml
 /app/log
-/css
-/image
-/js
+/assets
 /vendor
 
 .idea
