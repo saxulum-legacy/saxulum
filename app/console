@@ -1,22 +1,11 @@
 #!/usr/bin/env php
 <?php
 
-use Doctrine\ORM\Tools\Console\ConsoleRunner;
-use Doctrine\DBAL\Tools\Console\Helper\ConnectionHelper;
-use Doctrine\ORM\Tools\Console\Helper\EntityManagerHelper;
-use Symfony\Component\Console\Application as ConsoleApplication;
-use Symfony\Component\Console\Helper\HelperSet;
+putenv('APP_DEBUG=true');
+putenv('APP_ENV=dev');
 
-$app = require("app.php");
-$console = new ConsoleApplication();
-$helperSet = new HelperSet(array(
-    'db' => new ConnectionHelper($app['doctrine']->getConnection()),
-    'em' => new EntityManagerHelper($app['doctrine']->getManager())
-));
-$console->setHelperSet($helperSet);
-ConsoleRunner::addCommands($console);
+$app = require('app.php');
+/** @var Silex\Application $app */
+$app->boot();
 
-// load all project providers
-require 'registercommand.php';
-
-$console->run();
+$app['console']->run();
