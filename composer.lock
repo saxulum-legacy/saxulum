@@ -274,16 +274,16 @@
         },
         {
             "name": "dominikzogg/doctrine-orm-manager-registry-provider",
-            "version": "1.1.1",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dominikzogg/doctrine-orm-manager-registry-provider.git",
-                "reference": "1.1.1"
+                "reference": "1.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dominikzogg/doctrine-orm-manager-registry-provider/zipball/1.1.1",
-                "reference": "1.1.1",
+                "url": "https://api.github.com/repos/dominikzogg/doctrine-orm-manager-registry-provider/zipball/1.2.0",
+                "reference": "1.2.0",
                 "shasum": ""
             },
             "require": {
@@ -326,24 +326,24 @@
                 "registrymanager",
                 "silex"
             ],
-            "time": "2013-06-16 20:00:28"
+            "time": "2013-07-14 12:26:39"
         },
         {
             "name": "igorw/config-service-provider",
-            "version": "v1.2.0",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/igorw/ConfigServiceProvider.git",
-                "reference": "v1.2.0"
+                "reference": "v1.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/igorw/ConfigServiceProvider/zipball/v1.2.0",
-                "reference": "v1.2.0",
+                "url": "https://api.github.com/repos/igorw/ConfigServiceProvider/zipball/v1.2.1",
+                "reference": "v1.2.1",
                 "shasum": ""
             },
             "require": {
-                "silex/silex": "1.0.*@dev"
+                "silex/silex": ">=1.0,<2.0"
             },
             "require-dev": {
                 "jamesmoss/toml": ">=0.1,<1.0",
@@ -383,7 +383,57 @@
             "keywords": [
                 "silex"
             ],
-            "time": "2013-04-23 12:27:51"
+            "time": "2013-05-31 14:23:34"
+        },
+        {
+            "name": "jdorn/sql-formatter",
+            "version": "v1.2.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jdorn/sql-formatter.git",
+                "reference": "v1.2.9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jdorn/sql-formatter/zipball/v1.2.9",
+                "reference": "v1.2.9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeremy Dorn",
+                    "email": "jeremy@jeremydorn.com",
+                    "homepage": "http://jeremydorn.com/"
+                }
+            ],
+            "description": "a PHP SQL highlighting library",
+            "homepage": "https://github.com/jdorn/sql-formatter/",
+            "keywords": [
+                "highlight",
+                "sql"
+            ],
+            "time": "2013-04-26 18:42:52"
         },
         {
             "name": "jquery/jquery",
@@ -444,7 +494,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "Knplabs",
+                    "name": "KnpLabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -578,18 +628,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mheap/Silex-Assetic.git",
-                "reference": "8e6243f84100987a313ebb903e378b1de6cc8fb8"
+                "reference": "a3a680c1ba1c38a932c5ee3a2abde67068c7b243"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mheap/Silex-Assetic/zipball/8e6243f84100987a313ebb903e378b1de6cc8fb8",
-                "reference": "8e6243f84100987a313ebb903e378b1de6cc8fb8",
+                "url": "https://api.github.com/repos/mheap/Silex-Assetic/zipball/a3a680c1ba1c38a932c5ee3a2abde67068c7b243",
+                "reference": "a3a680c1ba1c38a932c5ee3a2abde67068c7b243",
                 "shasum": ""
             },
             "require": {
                 "kriswallsmith/assetic": "~1.0",
                 "php": ">=5.3.0",
-                "symfony/finder": ">=2.1,<2.3-dev"
+                "symfony/finder": "~2.1"
             },
             "require-dev": {
                 "phpunit/phpunit": "~3.7.10",
@@ -632,7 +682,7 @@
                 "assetic",
                 "silex"
             ],
-            "time": "2013-05-28 13:04:36"
+            "time": "2013-07-14 09:21:10"
         },
         {
             "name": "monolog/monolog",
@@ -831,36 +881,38 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/saxulum/saxulum-framework.git",
-                "reference": "ea0ec9ceaafc138d70a44bbca0b76cd085576c3e"
+                "reference": "a086e1a0f696b58d9eee7c11048c8b36fd017165"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/saxulum/saxulum-framework/zipball/ea0ec9ceaafc138d70a44bbca0b76cd085576c3e",
-                "reference": "ea0ec9ceaafc138d70a44bbca0b76cd085576c3e",
+                "url": "https://api.github.com/repos/saxulum/saxulum-framework/zipball/a086e1a0f696b58d9eee7c11048c8b36fd017165",
+                "reference": "a086e1a0f696b58d9eee7c11048c8b36fd017165",
                 "shasum": ""
             },
             "require": {
                 "dflydev/doctrine-orm-service-provider": "v1.0.0",
-                "dominikzogg/doctrine-orm-manager-registry-provider": "~1.1",
-                "igorw/config-service-provider": "v1.2.0",
+                "dominikzogg/doctrine-orm-manager-registry-provider": "~1.2",
+                "igorw/config-service-provider": "~1.2",
                 "knplabs/knp-menu": "2.0.*@alpha",
                 "leafo/lessphp": "~0.3.9",
                 "mheap/silex-assetic": "1.0.*@dev",
                 "monolog/monolog": "1.5.*",
                 "php": ">=5.3.3",
                 "saxulum/saxulum-controller-provider": "~1.0",
-                "silex/silex": "~1.0",
-                "silex/web-profiler": "~1.0",
+                "saxulum/saxulum-webprofiler-provider": "dev-master",
+                "silex/silex": "~1.1",
+                "silex/web-profiler": "dev-master#3d875ac4f583e893a076ec51478e38eeaf0cb562",
                 "swiftmailer/swiftmailer": "~5.0",
                 "symfony/config": "~2.3",
                 "symfony/doctrine-bridge": "~2.3",
+                "symfony/finder": "~2.3",
                 "symfony/form": "~2.3",
                 "symfony/security": "~2.3",
                 "symfony/translation": "~2.3",
                 "symfony/twig-bridge": "~2.3",
                 "symfony/validator": "~2.3",
                 "symfony/yaml": "~2.3",
-                "twig/twig": "~1.0"
+                "twig/twig": "~1.2"
             },
             "type": "library",
             "autoload": {
@@ -884,61 +936,109 @@
                 "saxulum",
                 "silex"
             ],
-            "time": "2013-07-03 04:55:55"
+            "time": "2013-07-14 13:56:37"
         },
         {
-            "name": "silex/silex",
-            "version": "v1.0.1",
+            "name": "saxulum/saxulum-webprofiler-provider",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/fabpot/Silex.git",
-                "reference": "v1.0.1"
+                "url": "https://github.com/saxulum/saxulum-webprofiler-provider.git",
+                "reference": "96fa7df5ba69a323fe49dd603ae401495da0852e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Silex/zipball/v1.0.1",
-                "reference": "v1.0.1",
+                "url": "https://api.github.com/repos/saxulum/saxulum-webprofiler-provider/zipball/96fa7df5ba69a323fe49dd603ae401495da0852e",
+                "reference": "96fa7df5ba69a323fe49dd603ae401495da0852e",
+                "shasum": ""
+            },
+            "require": {
+                "dominikzogg/doctrine-orm-manager-registry-provider": "~1.2",
+                "jdorn/sql-formatter": "~1.1",
+                "php": ">=5.3.3",
+                "psr/log": "1.0.*",
+                "silex/silex": "~1.1",
+                "silex/web-profiler": "~1.0",
+                "symfony/doctrine-bridge": "~2.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Saxulum\\SaxulumWebProfiler": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dominik Zogg",
+                    "email": "dominik.zogg@gmail.com"
+                }
+            ],
+            "description": "A extended webprofiler for saxulum (silex)",
+            "keywords": [
+                "saxulum",
+                "silex",
+                "webprofiler"
+            ],
+            "time": "2013-07-14 13:50:17"
+        },
+        {
+            "name": "silex/silex",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fabpot/Silex.git",
+                "reference": "v1.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fabpot/Silex/zipball/v1.1.0",
+                "reference": "v1.1.0",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
                 "pimple/pimple": "1.*",
-                "symfony/event-dispatcher": ">=2.1,<2.4-dev",
-                "symfony/http-foundation": ">=2.1,<2.4-dev",
-                "symfony/http-kernel": ">=2.1,<2.4-dev",
-                "symfony/routing": ">=2.1,<2.4-dev"
+                "symfony/event-dispatcher": ">=2.3,<2.4-dev",
+                "symfony/http-foundation": ">=2.3,<2.4-dev",
+                "symfony/http-kernel": ">=2.3,<2.4-dev",
+                "symfony/routing": ">=2.3,<2.4-dev"
             },
             "require-dev": {
                 "doctrine/dbal": ">=2.2.0,<2.4.0-dev",
                 "monolog/monolog": "~1.4,>=1.4.1",
+                "phpunit/phpunit": "~3.7",
                 "swiftmailer/swiftmailer": "5.*",
-                "symfony/browser-kit": ">=2.1,<2.4-dev",
-                "symfony/config": ">=2.1,<2.4-dev",
-                "symfony/css-selector": ">=2.1,<2.4-dev",
-                "symfony/dom-crawler": ">=2.1,<2.4-dev",
-                "symfony/finder": ">=2.1,<2.4-dev",
-                "symfony/form": ">=2.1.4,<2.4-dev",
-                "symfony/locale": ">=2.1,<2.4-dev",
-                "symfony/monolog-bridge": ">=2.1,<2.4-dev",
-                "symfony/options-resolver": ">=2.1,<2.4-dev",
-                "symfony/process": ">=2.1,<2.4-dev",
-                "symfony/security": ">=2.1,<2.4-dev",
-                "symfony/serializer": ">=2.1,<2.4-dev",
-                "symfony/translation": ">=2.1,<2.4-dev",
-                "symfony/twig-bridge": ">=2.1,<2.4-dev",
-                "symfony/validator": ">=2.1,<2.4-dev",
+                "symfony/browser-kit": ">=2.3,<2.4-dev",
+                "symfony/config": ">=2.3,<2.4-dev",
+                "symfony/css-selector": ">=2.3,<2.4-dev",
+                "symfony/dom-crawler": ">=2.3,<2.4-dev",
+                "symfony/finder": ">=2.3,<2.4-dev",
+                "symfony/form": ">=2.3,<2.4-dev",
+                "symfony/locale": ">=2.3,<2.4-dev",
+                "symfony/monolog-bridge": ">=2.3,<2.4-dev",
+                "symfony/options-resolver": ">=2.3,<2.4-dev",
+                "symfony/process": ">=2.3,<2.4-dev",
+                "symfony/security": ">=2.3,<2.4-dev",
+                "symfony/serializer": ">=2.3,<2.4-dev",
+                "symfony/translation": ">=2.3,<2.4-dev",
+                "symfony/twig-bridge": ">=2.3,<2.4-dev",
+                "symfony/validator": ">=2.3,<2.4-dev",
                 "twig/twig": ">=1.8.0,<2.0-dev"
             },
             "suggest": {
-                "symfony/browser-kit": ">=2.1,<2.4-dev",
-                "symfony/css-selector": ">=2.1,<2.4-dev",
-                "symfony/dom-crawler": ">=2.1,<2.4-dev",
-                "symfony/form": ">= 2.1.4,<2.4-dev"
+                "symfony/browser-kit": ">=2.3,<2.4-dev",
+                "symfony/css-selector": ">=2.3,<2.4-dev",
+                "symfony/dom-crawler": ">=2.3,<2.4-dev",
+                "symfony/form": ">=2.3,<2.4-dev"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -966,27 +1066,27 @@
             "keywords": [
                 "microframework"
             ],
-            "time": "2013-07-04 06:25:40"
+            "time": "2013-07-04 07:15:36"
         },
         {
             "name": "silex/web-profiler",
-            "version": "v1.0.0",
+            "version": "dev-master",
             "target-dir": "Silex/Provider",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silexphp/Silex-WebProfiler.git",
-                "reference": "v1.0.0"
+                "reference": "3d875ac4f583e893a076ec51478e38eeaf0cb562"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silexphp/Silex-WebProfiler/zipball/v1.0.0",
-                "reference": "v1.0.0",
+                "url": "https://api.github.com/repos/silexphp/Silex-WebProfiler/zipball/3d875ac4f583e893a076ec51478e38eeaf0cb562",
+                "reference": "3d875ac4f583e893a076ec51478e38eeaf0cb562",
                 "shasum": ""
             },
             "require": {
-                "silex/silex": ">=1.0,<2.0",
-                "symfony/stopwatch": ">=2.2,<3.0",
-                "symfony/web-profiler-bundle": ">=2.2,<3.0"
+                "silex/silex": "~1.0",
+                "symfony/stopwatch": "~2.2",
+                "symfony/web-profiler-bundle": "~2.2"
             },
             "type": "library",
             "extra": {
@@ -1011,7 +1111,7 @@
             ],
             "description": "A WebProfiler for Silex",
             "homepage": "http://silex.sensiolabs.org/",
-            "time": "2013-03-08 07:16:44"
+            "time": "2013-05-03 17:04:41"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -1388,17 +1488,17 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v2.2.3",
+            "version": "v2.3.1",
             "target-dir": "Symfony/Component/Finder",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "v2.2.3"
+                "reference": "v2.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/v2.2.3",
-                "reference": "v2.2.3",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/v2.3.1",
+                "reference": "v2.3.1",
                 "shasum": ""
             },
             "require": {
@@ -1407,7 +1507,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.2-dev"
+                    "dev-master": "2.3-dev"
                 }
             },
             "autoload": {
@@ -1431,7 +1531,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "http://symfony.com",
-            "time": "2013-06-10 18:35:46"
+            "time": "2013-06-02 12:05:51"
         },
         {
             "name": "symfony/form",
