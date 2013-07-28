@@ -29,11 +29,11 @@ Howto
 
 Create a new project: composer create-project saxulum/saxulum myproject --stability="dev"
 
-[1] http://silex.sensiolabs.org/documentation
-[2] http://silex.sensiolabs.org/doc/providers/twig.html
-[3] http://silex.sensiolabs.org/doc/providers/url_generator.html
-[4] http://silex.sensiolabs.org/doc/providers/form.html
-[5] http://silex.sensiolabs.org/doc/providers/translation.html
-[6] https://github.com/dominikzogg/doctrine-orm-manager-registry-provider
-[7] http://www.doctrine-project.org/projects/orm.html
-[8] https://github.com/kriswallsmith/assetic
+[1]: http://silex.sensiolabs.org/documentation
+[2]: http://silex.sensiolabs.org/doc/providers/twig.html
+[3]: http://silex.sensiolabs.org/doc/providers/url_generator.html
+[4]: http://silex.sensiolabs.org/doc/providers/form.html
+[5]: http://silex.sensiolabs.org/doc/providers/translation.html
+[6]: https://github.com/dominikzogg/doctrine-orm-manager-registry-provider
+[7]: http://www.doctrine-project.org/projects/orm.html
+[8]: https://github.com/kriswallsmith/assetic
