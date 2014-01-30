@@ -22,4 +22,6 @@ assetic.asset.asset_root: %root_dir%/assets
 
 route_controller_cache: %root_dir%/app/cache/%env%/controller
 
+console.cache: %root_dir%/app/cache/%env%/console
+
 translation_cache: %root_dir%/app/cache/%env%/translation
