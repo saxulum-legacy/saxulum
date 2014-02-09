@@ -7,7 +7,6 @@ use Igorw\Silex\ConfigServiceProvider;
 use Knp\Menu\Matcher\Matcher;
 use Knp\Menu\Silex\KnpMenuServiceProvider;
 use Knp\Menu\Silex\Voter\RouteVoter;
-use Saxulum\SaxulumFramework\Provider\SaxulumServiceProvider;
 use Silex\Application;
 use Silex\Provider\TranslationServiceProvider;
 use Silex\Provider\TwigServiceProvider;
