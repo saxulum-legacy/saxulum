@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "734f3a99aff6a33324906dbaa4c0fc47",
+    "hash": "cc1c5f1ccd3855f6f04a9df203cc26e4",
     "packages": [
         {
             "name": "dflydev/doctrine-orm-service-provider",
@@ -1183,16 +1183,16 @@
         },
         {
             "name": "saxulum/saxulum-bundle-provider",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/saxulum/saxulum-bundle-provider.git",
-                "reference": "7f58bc8977c060703ef1711917f80312d1062f8f"
+                "reference": "e81b8b35500cd7f293dc118fe37cb7af9bc2896d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/saxulum/saxulum-bundle-provider/zipball/7f58bc8977c060703ef1711917f80312d1062f8f",
-                "reference": "7f58bc8977c060703ef1711917f80312d1062f8f",
+                "url": "https://api.github.com/repos/saxulum/saxulum-bundle-provider/zipball/e81b8b35500cd7f293dc118fe37cb7af9bc2896d",
+                "reference": "e81b8b35500cd7f293dc118fe37cb7af9bc2896d",
                 "shasum": ""
             },
             "require": {
@@ -1229,7 +1229,7 @@
                 "bundle",
                 "silex"
             ],
-            "time": "2014-02-09 19:18:47"
+            "time": "2014-02-09 19:52:40"
         },
         {
             "name": "saxulum/saxulum-classfinder",
