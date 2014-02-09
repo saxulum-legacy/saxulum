@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "a6a6680d0da837ac162fee44784a8ce8",
+    "hash": "734f3a99aff6a33324906dbaa4c0fc47",
     "packages": [
         {
             "name": "dflydev/doctrine-orm-service-provider",
@@ -219,16 +219,16 @@
         },
         {
             "name": "doctrine/collections",
-            "version": "v1.1",
+            "version": "v1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "560f29c39cfcfbcd210e5d549d993a39d898b04b"
+                "reference": "b99c5c46c87126201899afe88ec490a25eedd6a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/560f29c39cfcfbcd210e5d549d993a39d898b04b",
-                "reference": "560f29c39cfcfbcd210e5d549d993a39d898b04b",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/b99c5c46c87126201899afe88ec490a25eedd6a2",
+                "reference": "b99c5c46c87126201899afe88ec490a25eedd6a2",
                 "shasum": ""
             },
             "require": {
@@ -237,7 +237,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1.x-dev"
+                    "dev-master": "1.2.x-dev"
                 }
             },
             "autoload": {
@@ -283,7 +283,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2013-03-07 12:15:54"
+            "time": "2014-02-03 23:07:43"
         },
         {
             "name": "doctrine/common",
@@ -544,16 +544,16 @@
         },
         {
             "name": "doctrine/orm",
-            "version": "v2.4.1",
+            "version": "v2.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "84373d05a4198ec380918d535abf83c454c3867f"
+                "reference": "0363a5548d9263f979f9ca149decb9cfc66419ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/84373d05a4198ec380918d535abf83c454c3867f",
-                "reference": "84373d05a4198ec380918d535abf83c454c3867f",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/0363a5548d9263f979f9ca149decb9cfc66419ab",
+                "reference": "0363a5548d9263f979f9ca149decb9cfc66419ab",
                 "shasum": ""
             },
             "require": {
@@ -616,20 +616,20 @@
                 "database",
                 "orm"
             ],
-            "time": "2013-11-12 12:40:13"
+            "time": "2014-02-08 16:35:09"
         },
         {
             "name": "dominikzogg/doctrine-orm-manager-registry-provider",
-            "version": "1.3.4",
+            "version": "1.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dominikzogg/doctrine-orm-manager-registry-provider.git",
-                "reference": "a39840d4738ceebc90369818939398980c104576"
+                "reference": "8eee1b9d63d4408212a74b12eba7c961d483710b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dominikzogg/doctrine-orm-manager-registry-provider/zipball/a39840d4738ceebc90369818939398980c104576",
-                "reference": "a39840d4738ceebc90369818939398980c104576",
+                "url": "https://api.github.com/repos/dominikzogg/doctrine-orm-manager-registry-provider/zipball/8eee1b9d63d4408212a74b12eba7c961d483710b",
+                "reference": "8eee1b9d63d4408212a74b12eba7c961d483710b",
                 "shasum": ""
             },
             "require": {
@@ -641,7 +641,7 @@
                 "phpunit/phpunit": "3.7.*"
             },
             "suggest": {
-                "saxulum/console": "~1.1.1",
+                "saxulum/saxulum-console": "~1.2",
                 "saxulum/saxulum-doctrine-orm-commands": "~1.0.0",
                 "symfony/doctrine-bridge": "~2.2",
                 "symfony/form": "~2.2"
@@ -674,7 +674,7 @@
                 "registrymanager",
                 "silex"
             ],
-            "time": "2014-01-18 17:05:36"
+            "time": "2014-02-01 11:01:53"
         },
         {
             "name": "igorw/config-service-provider",
@@ -1034,16 +1034,16 @@
         },
         {
             "name": "pimple/pimple",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Pimple.git",
-                "reference": "471c7d7c52ad6594e17b8ec33efdd1be592b5d83"
+                "reference": "2019c145fe393923f3441b23f29bbdfaa5c58c4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Pimple/zipball/471c7d7c52ad6594e17b8ec33efdd1be592b5d83",
-                "reference": "471c7d7c52ad6594e17b8ec33efdd1be592b5d83",
+                "url": "https://api.github.com/repos/fabpot/Pimple/zipball/2019c145fe393923f3441b23f29bbdfaa5c58c4d",
+                "reference": "2019c145fe393923f3441b23f29bbdfaa5c58c4d",
                 "shasum": ""
             },
             "require": {
@@ -1076,7 +1076,7 @@
                 "container",
                 "dependency injection"
             ],
-            "time": "2013-09-19 04:53:08"
+            "time": "2013-11-22 08:30:29"
         },
         {
             "name": "psr/log",
@@ -1180,6 +1180,56 @@
                 "twig"
             ],
             "time": "2014-01-14 22:27:51"
+        },
+        {
+            "name": "saxulum/saxulum-bundle-provider",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/saxulum/saxulum-bundle-provider.git",
+                "reference": "7f58bc8977c060703ef1711917f80312d1062f8f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/saxulum/saxulum-bundle-provider/zipball/7f58bc8977c060703ef1711917f80312d1062f8f",
+                "reference": "7f58bc8977c060703ef1711917f80312d1062f8f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "silex/silex": "~1.1"
+            },
+            "require-dev": {
+                "dflydev/doctrine-orm-service-provider": "~1.0.4",
+                "phpunit/phpunit": "3.7.*",
+                "saxulum/saxulum-console": "~1.2.0",
+                "saxulum/saxulum-route-controller-provider": "~1.0.3",
+                "saxulum/saxulum-translation-provider": "~1.0.0",
+                "symfony/browser-kit": "~2.3",
+                "twig/twig": ">=1.8,<2.0-dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Saxulum\\BundleProvider": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dominik Zogg",
+                    "email": "dominik.zogg@gmail.com"
+                }
+            ],
+            "description": "Saxulum Bundle Provider",
+            "keywords": [
+                "bundle",
+                "silex"
+            ],
+            "time": "2014-02-09 19:18:47"
         },
         {
             "name": "saxulum/saxulum-classfinder",
@@ -1346,72 +1396,6 @@
                 "silex"
             ],
             "time": "2014-01-16 20:21:38"
-        },
-        {
-            "name": "saxulum/saxulum-framework",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/saxulum/saxulum-framework.git",
-                "reference": "fed847e8d1cfa67c10c97fe643ffd887b2e6d85c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/saxulum/saxulum-framework/zipball/fed847e8d1cfa67c10c97fe643ffd887b2e6d85c",
-                "reference": "fed847e8d1cfa67c10c97fe643ffd887b2e6d85c",
-                "shasum": ""
-            },
-            "require": {
-                "dflydev/doctrine-orm-service-provider": "~1.0.4",
-                "dominikzogg/doctrine-orm-manager-registry-provider": "~1.3.3",
-                "igorw/config-service-provider": "~1.2",
-                "knplabs/knp-menu": "2.0.*@alpha",
-                "leafo/lessphp": "~0.4.0",
-                "monolog/monolog": "1.5.*",
-                "php": ">=5.3.3",
-                "saxulum/saxulum-assetic-twig-provider": "~1.2.0",
-                "saxulum/saxulum-console": "~1.2.0",
-                "saxulum/saxulum-doctrine-orm-commands": "~1.0.0",
-                "saxulum/saxulum-route-controller-provider": "~1.0.3",
-                "saxulum/saxulum-translation-provider": "~1.0.0",
-                "saxulum/saxulum-webprofiler-provider": "~1.0",
-                "silex/silex": "~1.1",
-                "silex/web-profiler": "~1.0.2",
-                "swiftmailer/swiftmailer": "~5.0",
-                "symfony/config": "~2.4",
-                "symfony/doctrine-bridge": "~2.4",
-                "symfony/finder": "~2.4",
-                "symfony/form": "~2.4",
-                "symfony/security": "~2.4",
-                "symfony/translation": "~2.4",
-                "symfony/twig-bridge": "~2.4",
-                "symfony/validator": "~2.4",
-                "symfony/yaml": "~2.4",
-                "twig/twig": "~1.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Saxulum\\SaxulumFramework": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dominik Zogg",
-                    "email": "dominik.zogg@gmail.com"
-                }
-            ],
-            "description": "framework files for saxulum",
-            "keywords": [
-                "framework",
-                "saxulum",
-                "silex"
-            ],
-            "time": "2014-01-30 20:45:30"
         },
         {
             "name": "saxulum/saxulum-route-controller-provider",
@@ -3143,11 +3127,11 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "saxulum/saxulum-framework": 20
+        "knplabs/knp-menu": 15
     },
-    "platform": [
-
-    ],
+    "platform": {
+        "php": ">=5.3.3"
+    },
     "platform-dev": [
 
     ]
