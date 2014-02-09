@@ -21,7 +21,6 @@ use Silex\Provider\MonologServiceProvider;
 use Silex\Provider\DoctrineServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
 use Silex\Provider\WebProfilerServiceProvider;
-
 use Saxulum\AsseticTwig\Silex\Provider\AsseticTwigProvider;
 use Saxulum\Console\Silex\Provider\ConsoleProvider;
 use Saxulum\RouteController\Provider\RouteControllerProvider;
@@ -38,12 +37,6 @@ if (!$loader = @include $rootDir . '/vendor/autoload.php') {
 
 // annotation registry
 AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
-
-// php intl fallback
-if (!function_exists('intl_get_error_code')) {
-    require_once $rootDir . '/vendor/symfony/locale/Symfony/Component/Locale/Resources/stubs/functions.php';
-    $loader->add('', $rootDir . '/vendor/symfony/locale/Symfony/Component/Locale/Resources/stubs');
-}
 
 // create new silex app
 $app = new Application();
