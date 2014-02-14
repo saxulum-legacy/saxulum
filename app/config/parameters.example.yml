@@ -12,11 +12,5 @@ swiftmailer.options:
   auth_mode: ~
 
 db.options:
-  driver: pdo_mysql
-  dbname: saxulum
-  host: localhost
-  user: root
-  password: root
-  charset: UTF8
-  path: ~
-  port: ~
+  driver: pdo_sqlite
+  path: saxulum.db
