@@ -3,5 +3,6 @@
 /app/log
 /assets
 /vendor
+saxulum.db
 
 .idea
