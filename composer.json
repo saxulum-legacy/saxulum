@@ -21,7 +21,7 @@
         "saxulum/saxulum-assetic-twig-provider": "~1.2.0",
         "saxulum/saxulum-bundle-provider": "~1.0.1",
         "saxulum/saxulum-console": "~1.2.0",
-        "saxulum/saxulum-route-controller-provider": "~1.0.3",
+        "saxulum/saxulum-route-controller-provider": "~1.0.5",
         "saxulum/saxulum-doctrine-orm-commands": "~1.0.0",
         "saxulum/saxulum-translation-provider": "~1.0.0",
         "saxulum/saxulum-webprofiler-provider": "~1.0",
