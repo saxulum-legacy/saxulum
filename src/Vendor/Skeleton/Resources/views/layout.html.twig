@@ -4,21 +4,21 @@
     <title>{% block pagetitle %}{% endblock pagetitle %}</title>
     {% block stylesheet %}
         {% stylesheets filter='lessphp,csscopyfile' output='css/libraries.css'
-            '../vendor/twitter/bootstrap/less/bootstrap.less'
-            '../vendor/twitter/bootstrap/less/responsive.less'
+            'vendor/twbs/bootstrap/less/bootstrap.less'
+            'vendor/twbs/bootstrap/less/responsive.less'
         %}
-            <link rel="stylesheet" href="{{ url('assetic_file', {'file': asset_url}) }}" />
+            <link rel="stylesheet" href="{{ app.request.basepath }}/{{ app.assetic_asset_path }}/{{ asset_url }}" />
         {% endstylesheets %}
         {% stylesheets filter='csscopyfile' output='css/base.css'
-            '../src/Vendor/Skeleton/Resources/public/css/*css'
+            'src/Vendor/Skeleton/Resources/public/css/*css'
         %}
-            <link rel="stylesheet" href="{{ url('assetic_file', {'file': asset_url}) }}" />
+            <link rel="stylesheet" href="{{ app.request.basepath }}/{{ app.assetic_asset_path }}/{{ asset_url }}" />
         {% endstylesheets %}
         {% javascripts output='js/libraries.js'
-            '../vendor/jquery/jquery/jquery-*.js'
-            '../vendor/twitter/bootstrap/js/bootstrap-*.js'
+            'vendor/jquery/jquery/jquery-*.js'
+            'vendor/twbs/bootstrap/js/bootstrap-*.js'
         %}
-            <script type="text/javascript" src="{{ url('assetic_file', {'file': asset_url}) }}"></script>
+            <script type="text/javascript" src="{{ app.request.basepath }}/{{ app.assetic_asset_path }}/{{ asset_url }}"></script>
         {% endjavascripts %}
     {% endblock stylesheet %}
     {% block scripts %}{% endblock scripts %}

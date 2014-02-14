@@ -2,42 +2,76 @@
 
 namespace Vendor\Skeleton\Controller;
 
+use Dominikzogg\Doctrine\Registry\ManagerRegistry;
 use Silex\Application;
+use Saxulum\RouteController\Annotation\DI;
+use Saxulum\RouteController\Annotation\Route;
+use Symfony\Component\Form\FormFactory;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\Routing\Generator\UrlGenerator;
 use Vendor\Skeleton\Entity\Example;
 use Vendor\Skeleton\Form\Type\ExampleType;
 
-class ExampleController extends AbstractController
+/**
+ * @DI(serviceIds={"doctrine", "twig", "form.factory", "url_generator"})
+ */
+class ExampleController
 {
-    public static function addRoutes(Application $app, $serviceId)
-    {
-        $app
-            ->match('/', $serviceId . ':listAction')
-            ->bind('example_list')
-        ;
-        $app
-            ->match('/edit/{id}', $serviceId . ':editAction')
-            ->value('id', null)
-            ->assert('id', '\d+')
-            ->bind('example_edit')
-        ;
-    }
+    /**
+     * @var ManagerRegistry
+     */
+    protected $doctrine;
 
     /**
+     * @var \Twig_Environment
+     */
+    protected $twig;
+
+    /**
+     * @var FormFactory
+     */
+    protected $formFactory;
+
+    /**
+     * @var UrlGenerator
+     */
+    protected $urlGenerator;
+
+    /**
+     * @param ManagerRegistry $doctrine
+     * @param \Twig_Environment $twig
+     * @param FormFactory $formFactory
+     * @param UrlGenerator $urlGenerator
+     */
+    public function __construct(
+        ManagerRegistry $doctrine,
+        \Twig_Environment $twig,
+        FormFactory $formFactory,
+        UrlGenerator $urlGenerator
+    ) {
+        $this->doctrine = $doctrine;
+        $this->twig = $twig;
+        $this->formFactory = $formFactory;
+        $this->urlGenerator = $urlGenerator;
+    }
+    
+    /**
+     * @Route("/", bind="example_list")
      * @return string
      */
     public function listAction()
     {
-        $examples = $this->getDoctrine()->getManager()->getRepository(get_class(new Example()))->findAll();
+        $examples = $this->doctrine->getManager()->getRepository(get_class(new Example()))->findAll();
 
-        return $this->renderView('@VendorSkeleton/Example/list.html.twig', array(
+        return $this->twig->render('@VendorSkeleton/Example/list.html.twig', array(
             'examples' => $examples,
         ));
     }
 
     /**
+     * @Route("/edit/{id}", bind="example_edit", asserts={"name"="\d+"}, values={"id"=null})
      * @param Request $request
      * @param $id
      * @return string
@@ -48,25 +82,25 @@ class ExampleController extends AbstractController
         if (is_null($id)) {
             $example = new Example();
         } else {
-            $example = $this->getDoctrine()->getManager()->getRepository(get_class(new Example()))->find($id);
+            $example = $this->doctrine->getManager()->getRepository(get_class(new Example()))->find($id);
             if (is_null($example)) {
                 throw new NotFoundHttpException("Can't find example with id {$id}");
             }
         }
 
-        $exampleForm = $this->createForm(new ExampleType(), $example);
+        $exampleForm = $this->formFactory->create(new ExampleType(), $example);
 
         if ('POST' === $request->getMethod()) {
-            $exampleForm->bind($request);
+            $exampleForm->handleRequest($request);
             if ($exampleForm->isValid()) {
-                $this->getDoctrine()->getManager()->persist($example);
-                $this->getDoctrine()->getManager()->flush();
+                $this->doctrine->getManager()->persist($example);
+                $this->doctrine->getManager()->flush();
 
-                return new RedirectResponse($this->getUrlGenerator()->generate('example_edit', array('id' => $example->getId())));
+                return new RedirectResponse($this->urlGenerator->generate('example_edit', array('id' => $example->getId())));
             }
         }
 
-        return $this->renderView('@VendorSkeleton/Example/edit.html.twig', array(
+        return $this->twig->render('@VendorSkeleton/Example/edit.html.twig', array(
             'example' => $example,
             'exampleForm' => $exampleForm->createView(),
         ));

@@ -3,7 +3,6 @@
 {% block body %}
     <form action="{{ url('example_edit', {'id': example.id}) }}" method="post" {{ form_enctype(exampleForm) }}>
         {{ form_widget(exampleForm) }}
-        <input type="submit" value="submit" />
     </form>
     <a href="{{ url('example_list') }}">{{ "example.back"|trans }}</a>
 {% endblock body %}

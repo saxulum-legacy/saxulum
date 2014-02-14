@@ -2,7 +2,7 @@
 
 namespace Vendor\Skeleton\Command;
 
-use Saxulum\SaxulumFramework\Command\AbstractCommand;
+use Saxulum\Console\Command\AbstractCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
