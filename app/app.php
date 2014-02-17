@@ -2,7 +2,6 @@
 
 use Dflydev\Silex\Provider\DoctrineOrm\DoctrineOrmServiceProvider;
 use Doctrine\Common\Annotations\AnnotationRegistry;
-use Dominikzogg\Silex\Provider\DoctrineOrmManagerRegistryProvider;
 use Igorw\Silex\ConfigServiceProvider;
 use Knp\Menu\Matcher\Matcher;
 use Knp\Menu\Silex\KnpMenuServiceProvider;
@@ -23,6 +22,7 @@ use Silex\Provider\ServiceControllerServiceProvider;
 use Silex\Provider\WebProfilerServiceProvider;
 use Saxulum\AsseticTwig\Silex\Provider\AsseticTwigProvider;
 use Saxulum\Console\Silex\Provider\ConsoleProvider;
+use Saxulum\DoctrineOrmManagerRegistry\Silex\Provider\DoctrineOrmManagerRegistryProvider;
 use Saxulum\RouteController\Provider\RouteControllerProvider;
 use Saxulum\Translation\Silex\Provider\TranslationProvider;
 use Saxulum\SaxulumWebProfiler\Provider\SaxulumWebProfilerProvider;

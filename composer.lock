@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "8b226eef2445e7af95d0e0619d0f38a2",
+    "hash": "1a882130216c413291cef043de77e84d",
     "packages": [
         {
             "name": "dflydev/doctrine-orm-service-provider",
@@ -617,64 +617,6 @@
                 "orm"
             ],
             "time": "2014-02-08 16:35:09"
-        },
-        {
-            "name": "dominikzogg/doctrine-orm-manager-registry-provider",
-            "version": "1.3.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dominikzogg/doctrine-orm-manager-registry-provider.git",
-                "reference": "8eee1b9d63d4408212a74b12eba7c961d483710b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dominikzogg/doctrine-orm-manager-registry-provider/zipball/8eee1b9d63d4408212a74b12eba7c961d483710b",
-                "reference": "8eee1b9d63d4408212a74b12eba7c961d483710b",
-                "shasum": ""
-            },
-            "require": {
-                "dflydev/doctrine-orm-service-provider": "~1.0.4",
-                "php": ">=5.3.3",
-                "pimple/pimple": "~1.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "3.7.*"
-            },
-            "suggest": {
-                "saxulum/saxulum-console": "~1.2",
-                "saxulum/saxulum-doctrine-orm-commands": "~1.0.0",
-                "symfony/doctrine-bridge": "~2.2",
-                "symfony/form": "~2.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Dominikzogg\\Cilex": "src",
-                    "Dominikzogg\\Doctrine": "src",
-                    "Dominikzogg\\Pimple": "src",
-                    "Dominikzogg\\Silex": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dominik Zogg",
-                    "email": "dominik.zogg@gmail.com"
-                }
-            ],
-            "description": "Doctrine ORM Manager Registry Provider",
-            "keywords": [
-                "cilex",
-                "doctrine",
-                "orm",
-                "pimple",
-                "registrymanager",
-                "silex"
-            ],
-            "time": "2014-02-01 11:01:53"
         },
         {
             "name": "igorw/config-service-provider",
@@ -1327,16 +1269,16 @@
         },
         {
             "name": "saxulum/saxulum-doctrine-orm-commands",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/saxulum/saxulum-doctrine-orm-commands.git",
-                "reference": "d0eb1698667101753c540a912ea82b1b67a5a47e"
+                "reference": "25d1060151a12ef59fe58259e2bdd4d38c38f4bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/saxulum/saxulum-doctrine-orm-commands/zipball/d0eb1698667101753c540a912ea82b1b67a5a47e",
-                "reference": "d0eb1698667101753c540a912ea82b1b67a5a47e",
+                "url": "https://api.github.com/repos/saxulum/saxulum-doctrine-orm-commands/zipball/25d1060151a12ef59fe58259e2bdd4d38c38f4bf",
+                "reference": "25d1060151a12ef59fe58259e2bdd4d38c38f4bf",
                 "shasum": ""
             },
             "require": {
@@ -1346,15 +1288,15 @@
             },
             "require-dev": {
                 "dflydev/doctrine-orm-service-provider": "~1.0.4",
-                "dominikzogg/doctrine-orm-manager-registry-provider": "~1.3.0",
                 "phpunit/phpunit": "3.7.*",
                 "saxulum/saxulum-console": "~1.1.0",
+                "saxulum/saxulum-doctrine-orm-manager-registry-provider": "~2.0.0",
                 "silex/silex": "~1.1"
             },
             "suggest": {
                 "dflydev/doctrine-orm-service-provider": "~1.0.4",
-                "dominikzogg/doctrine-orm-manager-registry-provider": "~1.3.0",
                 "saxulum/saxulum-console": "~1.1.0",
+                "saxulum/saxulum-doctrine-orm-manager-registry-provider": "~2.0.0",
                 "silex/silex": "~1.1"
             },
             "type": "library",
@@ -1370,7 +1312,9 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
                 },
                 {
                     "name": "Symfony Community",
@@ -1395,7 +1339,62 @@
                 "saxulum",
                 "silex"
             ],
-            "time": "2014-01-16 20:21:38"
+            "time": "2014-02-15 11:21:33"
+        },
+        {
+            "name": "saxulum/saxulum-doctrine-orm-manager-registry-provider",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/saxulum/saxulum-doctrine-orm-manager-registry-provider.git",
+                "reference": "5c7d6a1f9975618ba95c683a8e57d99ac8fc54b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/saxulum/saxulum-doctrine-orm-manager-registry-provider/zipball/5c7d6a1f9975618ba95c683a8e57d99ac8fc54b7",
+                "reference": "5c7d6a1f9975618ba95c683a8e57d99ac8fc54b7",
+                "shasum": ""
+            },
+            "require": {
+                "dflydev/doctrine-orm-service-provider": "~1.0.4",
+                "php": ">=5.3.3",
+                "pimple/pimple": "~1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "suggest": {
+                "saxulum/saxulum-console": "~1.2",
+                "saxulum/saxulum-doctrine-orm-commands": "~1.0.0",
+                "symfony/doctrine-bridge": "~2.2",
+                "symfony/form": "~2.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Saxulum\\DoctrineOrmManagerRegistry": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dominik Zogg",
+                    "email": "dominik.zogg@gmail.com"
+                }
+            ],
+            "description": "Saxulum Doctrine ORM Manager Registry Provider",
+            "keywords": [
+                "cilex",
+                "doctrine",
+                "orm",
+                "pimple",
+                "registrymanager",
+                "silex"
+            ],
+            "time": "2014-02-15 10:44:45"
         },
         {
             "name": "saxulum/saxulum-route-controller-provider",
@@ -1502,23 +1501,23 @@
         },
         {
             "name": "saxulum/saxulum-webprofiler-provider",
-            "version": "1.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/saxulum/saxulum-webprofiler-provider.git",
-                "reference": "35baa9e7fa83ebacf9138379af96ad4963792406"
+                "reference": "5dc714f2ddcae95d570ec28be41f8091c745de4f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/saxulum/saxulum-webprofiler-provider/zipball/35baa9e7fa83ebacf9138379af96ad4963792406",
-                "reference": "35baa9e7fa83ebacf9138379af96ad4963792406",
+                "url": "https://api.github.com/repos/saxulum/saxulum-webprofiler-provider/zipball/5dc714f2ddcae95d570ec28be41f8091c745de4f",
+                "reference": "5dc714f2ddcae95d570ec28be41f8091c745de4f",
                 "shasum": ""
             },
             "require": {
-                "dominikzogg/doctrine-orm-manager-registry-provider": "~1.2",
                 "jdorn/sql-formatter": "~1.1",
                 "php": ">=5.3.3",
                 "psr/log": "1.0.*",
+                "saxulum/saxulum-doctrine-orm-manager-registry-provider": "~2.0.0",
                 "silex/silex": "~1.0",
                 "silex/web-profiler": "~1.0",
                 "symfony/doctrine-bridge": "~2.3"
@@ -1548,7 +1547,7 @@
                 "silex",
                 "webprofiler"
             ],
-            "time": "2013-07-14 18:18:08"
+            "time": "2014-02-15 11:37:26"
         },
         {
             "name": "silex/silex",

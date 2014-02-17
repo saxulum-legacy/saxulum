@@ -2,8 +2,8 @@
 
 namespace Vendor\Skeleton\Controller;
 
-use Dominikzogg\Doctrine\Registry\ManagerRegistry;
 use Silex\Application;
+use Saxulum\DoctrineOrmManagerRegistry\Doctrine\ManagerRegistry;
 use Saxulum\RouteController\Annotation\DI;
 use Saxulum\RouteController\Annotation\Route;
 use Symfony\Component\Form\FormFactory;
