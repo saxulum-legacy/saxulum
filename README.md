@@ -27,7 +27,18 @@ With the [Assetic][8] integration, which searchs for stylesheet and javascript b
 Howto
 -----
 
-Create a new project: composer create-project saxulum/saxulum myproject --stability="dev"
+Create a new project:
+
+```
+composer create-project saxulum/saxulum myproject --stability="dev"
+```
+
+Dump assets:
+
+```
+./app/console assetic:dump
+./app/console assetic:dump --env=prod
+```
 
 [1]: http://silex.sensiolabs.org/documentation
 [2]: http://silex.sensiolabs.org/doc/providers/twig.html
