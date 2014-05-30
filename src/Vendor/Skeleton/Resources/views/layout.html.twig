@@ -1,29 +1,67 @@
-<html>
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>{% block pagetitle %}{% endblock pagetitle %}</title>
     {% block stylesheet %}
-        {% stylesheets filter='lessphp,csscopyfile' output='css/libraries.css'
-            'vendor/twbs/bootstrap/less/bootstrap.less'
-            'vendor/twbs/bootstrap/less/responsive.less'
+        {% stylesheets filter='lessphp,csscopyfile,?cssmin'
+        'vendor/twbs/bootstrap/less/bootstrap.less'
+        'vendor/saxulum/saxulum-bootstrap-provider/src/Saxulum/SaxulumBootstrapProvider/Resources/less/form.less'
         %}
-            <link rel="stylesheet" href="{{ app.request.basepath }}/{{ app.assetic_asset_path }}/{{ asset_url }}" />
+        <link rel="stylesheet" href="{{ app.request.basepath }}/{{ app.assetic_asset_path }}/{{ asset_url }}" />
         {% endstylesheets %}
-        {% stylesheets filter='csscopyfile' output='css/base.css'
-            'src/Vendor/Skeleton/Resources/public/css/*css'
+        {% stylesheets filter='csscopyfile,?cssmin'
+        'src/Vendor/Skeleton/Resources/public/css/*.css'
         %}
-            <link rel="stylesheet" href="{{ app.request.basepath }}/{{ app.assetic_asset_path }}/{{ asset_url }}" />
+        <link rel="stylesheet" href="{{ app.request.basepath }}/{{ app.assetic_asset_path }}/{{ asset_url }}" />
         {% endstylesheets %}
-        {% javascripts output='js/libraries.js'
-            'vendor/jquery/jquery/jquery-*.js'
-            'vendor/twbs/bootstrap/js/bootstrap-*.js'
-        %}
-            <script type="text/javascript" src="{{ app.request.basepath }}/{{ app.assetic_asset_path }}/{{ asset_url }}"></script>
-        {% endjavascripts %}
     {% endblock stylesheet %}
-    {% block scripts %}{% endblock scripts %}
+    {% block scripts %}
+        {% javascripts filter='?jsmin'
+        'vendor/jquery/jquery/jquery-*.js'
+        'vendor/twbs/bootstrap/js/collapse.js'
+        'vendor/twbs/bootstrap/js/dropdown.js'
+        'vendor/twbs/bootstrap/js/modal.js'
+        'vendor/twbs/bootstrap/js/tooltip.js'
+        %}
+        <script type="text/javascript" src="{{ app.request.basepath }}/{{ app.assetic_asset_path }}/{{ asset_url }}"></script>
+        {% endjavascripts %}
+        {% javascripts filter='?jsmin'
+        'src/Vendor/Skeleton/Resources/public/js/*.js'
+        %}
+        <script type="text/javascript" src="{{ app.request.basepath }}/{{ app.assetic_asset_path }}/{{ asset_url }}"></script>
+        {% endjavascripts %}
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    {% endblock scripts %}
 </head>
 <body>
-    {% block body %}{% endblock body %}
+<!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ url('example_list') }}">{{ "projectname"|trans }}</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            {{ knp_menu_render('main', { 'style': 'navbar' }) }}
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+<div id="content" class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            {% block body %}{% endblock body %}
+        </div>
+    </div>
+</div>
 </body>
 </html>

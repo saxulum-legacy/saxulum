@@ -2,11 +2,11 @@
 
 namespace Vendor\Skeleton\Command;
 
-use Saxulum\Console\Command\AbstractCommand;
+use Saxulum\Console\Command\AbstractPimpleCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class TestCommand extends AbstractCommand
+class TestCommand extends AbstractPimpleCommand
 {
     protected function configure()
     {

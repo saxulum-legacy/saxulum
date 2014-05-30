@@ -1,10 +1,17 @@
 #!/usr/bin/env php
 <?php
 
-putenv('APP_DEBUG=true');
-putenv('APP_ENV=dev');
+set_time_limit(0);
 
-$app = require('app.php');
+$loader = require_once __DIR__ . '/autoload.php';
+
+use Symfony\Component\Console\Input\ArgvInput;
+
+$input = new ArgvInput();
+$env = $input->getParameterOption(array('--env', '-e'), getenv('APP_ENV') ?: 'dev');
+$debug = getenv('APP_DEBUG') !== '0' && !$input->hasParameterOption(array('--no-debug', '')) && $env !== 'prod';
+
+$app = require(__DIR__ . '/app.php');
 /** @var Silex\Application $app */
 $app->boot();
 

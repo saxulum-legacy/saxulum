@@ -2,6 +2,8 @@
 
 namespace Vendor\Skeleton\Controller;
 
+use Doctrine\ORM\EntityRepository;
+use Knp\Component\Pager\Paginator;
 use Silex\Application;
 use Saxulum\DoctrineOrmManagerRegistry\Doctrine\ManagerRegistry;
 use Saxulum\RouteController\Annotation\DI;
@@ -15,7 +17,7 @@ use Vendor\Skeleton\Entity\Example;
 use Vendor\Skeleton\Form\Type\ExampleType;
 
 /**
- * @DI(serviceIds={"doctrine", "twig", "form.factory", "url_generator"})
+ * @DI(serviceIds={"doctrine", "twig", "form.factory", "knp_paginator", "url_generator"})
  */
 class ExampleController
 {
@@ -35,6 +37,11 @@ class ExampleController
     protected $formFactory;
 
     /**
+     * @var Paginator
+     */
+    protected $paginator;
+
+    /**
      * @var UrlGenerator
      */
     protected $urlGenerator;
@@ -43,17 +50,20 @@ class ExampleController
      * @param ManagerRegistry $doctrine
      * @param \Twig_Environment $twig
      * @param FormFactory $formFactory
+     * @param Paginator $paginator
      * @param UrlGenerator $urlGenerator
      */
     public function __construct(
         ManagerRegistry $doctrine,
         \Twig_Environment $twig,
         FormFactory $formFactory,
+        Paginator $paginator,
         UrlGenerator $urlGenerator
     ) {
         $this->doctrine = $doctrine;
         $this->twig = $twig;
         $this->formFactory = $formFactory;
+        $this->paginator = $paginator;
         $this->urlGenerator = $urlGenerator;
     }
     
@@ -61,9 +71,14 @@ class ExampleController
      * @Route("/", bind="example_list")
      * @return string
      */
-    public function listAction()
+    public function listAction(Request $request)
     {
-        $examples = $this->doctrine->getManager()->getRepository(get_class(new Example()))->findAll();
+        /** @var EntityRepository $repo */
+        $repo = $this->doctrine->getManager()->getRepository(get_class(new Example()));
+
+        $qb = $repo->createQueryBuilder('e');
+
+        $examples = $this->paginator->paginate($qb, $request->query->get('page', 1), 10);
 
         return $this->twig->render('@VendorSkeleton/Example/list.html.twig', array(
             'examples' => $examples,
@@ -91,7 +106,7 @@ class ExampleController
         $exampleForm = $this->formFactory->create(new ExampleType(), $example);
 
         if ('POST' === $request->getMethod()) {
-            $exampleForm->handleRequest($request);
+            $exampleForm->submit($request);
             if ($exampleForm->isValid()) {
                 $this->doctrine->getManager()->persist($example);
                 $this->doctrine->getManager()->flush();
@@ -104,5 +119,25 @@ class ExampleController
             'example' => $example,
             'exampleForm' => $exampleForm->createView(),
         ));
+    }
+
+    /**
+     * @Route("/delete/{id}", bind="example_delete", asserts={"name"="\d+"})
+     * @param $id
+     * @return RedirectResponse
+     * @throws NotFoundHttpException
+     */
+    public function deleteAction($id)
+    {
+        $example = $this->doctrine->getManager()->getRepository(get_class(new Example()))->find($id);
+
+        if (is_null($example)) {
+            throw new NotFoundHttpException("Can't find example with id {$id}");
+        }
+
+        $this->doctrine->getManager()->remove($example);
+        $this->doctrine->getManager()->flush();
+
+        return new RedirectResponse($this->urlGenerator->generate('example_list'), 302);
     }
 }

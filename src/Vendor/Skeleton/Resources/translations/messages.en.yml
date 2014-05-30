@@ -1,3 +1,31 @@
+projectname: saxulum
+
+nav:
+  example_list: Examples
+
+actions: &actions Actions
+back: &back Back
+cancel: &cancel Cancel
+create: &create Create
+delete: &delete Delete
+edit: &edit edit
+id: &id Id
+name: &name Name
+vaue: &value Value
+save: &save Save
+
+Previous: previous
+Next: next
+
 example:
-  add: add new example
-  back: back to example list
+  edit:
+    title: Edit Example
+    save: *save
+    back: *back
+  list:
+    title: Example List
+    name: *name
+    actions: *actions
+    edit: *edit
+    delete: *delete
+    create: *create

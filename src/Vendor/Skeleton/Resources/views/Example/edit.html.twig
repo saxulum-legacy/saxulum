@@ -1,8 +1,23 @@
 {% extends "@VendorSkeleton/layout.html.twig" %}
 
+{% block pagetitle %}{{ ("example.edit.title")|trans() }}{% endblock %}
+
 {% block body %}
-    <form action="{{ url('example_edit', {'id': example.id}) }}" method="post" {{ form_enctype(exampleForm) }}>
+    <h1>{{ ("example.edit.title")|trans() }}</h1>
+    <form action="{{ url('example_edit', {'id': example.id}) }}" method="post" {{ form_enctype(exampleForm) }} class="form-horizontal">
+        {{ bootstrap_set_style('horizontal') }}
+
         {{ form_widget(exampleForm) }}
+
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+                <button type="submit" class="btn btn-success" name="save" value="{{ ("example.edit.save")|trans() }}">
+                    <i class="glyphicon glyphicon-save"></i>
+                </button>
+                <a class="btn btn-default" href="{{ url('example_list') }}" title="{{ ("example.edit.back")|trans() }}">
+                    <i class="glyphicon glyphicon-list-alt"></i>
+                </a>
+            </div>
+        </div>
     </form>
-    <a href="{{ url('example_list') }}">{{ "example.back"|trans }}</a>
-{% endblock body %}
+{% endblock %}

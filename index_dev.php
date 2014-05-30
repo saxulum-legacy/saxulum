@@ -8,10 +8,12 @@ if (isset($_SERVER['HTTP_CLIENT_IP'])
     exit('You are not allowed to access this file. Check '.basename(__FILE__).' for more information.');
 }
 
-putenv('APP_DEBUG=true');
-putenv('APP_ENV=dev');
+$loader = require_once __DIR__ . '/app/autoload.php';
 
-$app = require_once __DIR__.'/app/app.php';
+$env = 'dev';
+$debug = true;
+
 /** @var Silex\Application $app */
+$app = require_once __DIR__.'/app/app.php';
 
 $app->run();

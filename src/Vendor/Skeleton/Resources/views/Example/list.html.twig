@@ -1,12 +1,44 @@
 {% extends "@VendorSkeleton/layout.html.twig" %}
 
+{% block pagetitle %}{{ ("example.list.title")|trans() }}{% endblock %}
+
 {% block body %}
+    <h1>{{ ("example.list.title")|trans() }}</h1>
+    <br />
+    <a class="btn btn-default" href="{{ url('example_edit') }}" title="{{ ("example.list.create")|trans() }}">
+        <i class="glyphicon glyphicon-plus"></i>
+    </a><br />
+    <br />
     {% if examples|length > 0 %}
-        <ul>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>{{ ("example.list.name")|trans() }}</th>
+                <th>{{ ("example.list.actions")|trans() }}</th>
+            </tr>
+            </thead>
+            <tbody>
             {% for example in examples %}
-                <li><a href="{{ url('example_edit', {'id': example.id}) }}">{{ example.name }}</a></li>
+                <tr>
+                    <td>{{ example }}</td>
+                    <td>
+                        {% if 'example_edit'|default(false) %}
+                            <a class="btn btn-default" href="{{ url('example_edit', {'id': example.id }) }}" title="{{ ("example.list.edit")|trans() }}">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </a>
+                        {% endif %}
+                        {% if 'example_delete'|default(false) %}
+                            <a class="btn btn-danger" data-delete-link href="{{ url('example_delete', {'id': example.id }) }}" title="{{ ("example.list.delete")|trans() }}">
+                                <i class="glyphicon glyphicon-remove"></i>
+                            </a>
+                        {% endif %}
+                    </td>
+                </tr>
             {% endfor %}
-        </ul>
-    {% endif  %}
-    <a href="{{ url('example_edit') }}">{{ "example.add"|trans }}</a>
-{% endblock body %}
+            </tbody>
+        </table>
+        {% if examples.template|default(false) %}
+            {{ knp_pagination_render(examples) }}
+        {% endif %}
+    {% endif %}
+{% endblock %}

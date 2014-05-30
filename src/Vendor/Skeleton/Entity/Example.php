@@ -25,6 +25,17 @@ class Example
     protected $name;
 
     /**
+     * @var string
+     * @ORM\Column(name="value", type="string")
+     */
+    protected $value;
+
+    public function __toString()
+    {
+        return (string) $this->getName();
+    }
+
+    /**
      * @return int
      */
     public function getId()
@@ -34,7 +45,7 @@ class Example
 
     /**
      * @param  string   $name
-     * @return Skeleton
+     * @return $this
      */
     public function setName($name)
     {
@@ -49,5 +60,24 @@ class Example
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * @param string $value
+     * @return $this
+     */
+    public function setValue($value)
+    {
+        $this->value = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->value;
     }
 }
