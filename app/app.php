@@ -3,7 +3,7 @@
 use Dflydev\Silex\Provider\DoctrineOrm\DoctrineOrmServiceProvider;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Igorw\Silex\ConfigServiceProvider;
-use Knp\Menu\Silex\KnpMenuServiceProvider;
+use Knp\Menu\Integration\Silex\KnpMenuServiceProvider;
 use Silex\Application;
 use Silex\Provider\TranslationServiceProvider;
 use Silex\Provider\TwigServiceProvider;
